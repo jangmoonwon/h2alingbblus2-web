@@ -1,12 +1,12 @@
 import React from "react";
-import { BackgroundImg } from "./styles";
+import { Container } from "./styles";
+
 
 function MainPage() {
   return (
-    <div>
-      <BackgroundImg src="/images/mainBg.jpg" alt="main img"></BackgroundImg>
-      <h1>Main Pages.</h1>
-    </div>
+    <Container>
+      <span>Main Pages.</span>
+    </Container>
   );
 }
 

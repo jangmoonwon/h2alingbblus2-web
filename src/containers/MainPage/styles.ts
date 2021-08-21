@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-const BackgroundImg = styled.img`
+const Container = styled.div`
+  /* display: flex; */
+  background-image: url("/images/churchfilm.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
 `;
 
-export { BackgroundImg };
+export { Container };
