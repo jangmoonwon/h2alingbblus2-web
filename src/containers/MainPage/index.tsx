@@ -1,11 +1,12 @@
 import React from "react";
-import { Container } from "./styles";
-
+import { Container, Wrapper } from "./styles";
 
 function MainPage() {
   return (
     <Container>
-      <span>Main Pages.</span>
+      <Wrapper>Main Pages_1</Wrapper>
+      <Wrapper style={{backgroundColor: 'red'}}>Main Pages_2</Wrapper>
+      <Wrapper style={{backgroundColor: 'blue'}}>Main Pages_3</Wrapper>
     </Container>
   );
 }

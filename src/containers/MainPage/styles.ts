@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* display: flex; */
-  background-image: url("/images/churchfilm.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url("/images/dinosaur.png");
   width: 100vw;
   height: 100vh;
+  object-fit: cover;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
 `;
 
-export { Container };
+const Wrapper = styled.div`
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 35px;
+  font-weight: 600;
+`;
+
+export { Container, Wrapper };
