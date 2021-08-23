@@ -12,9 +12,6 @@ const Container = styled.div`
 `;
 
 const MainLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 30px;
   text-decoration: none;
   margin: 20px;
@@ -44,7 +41,6 @@ const TextLink = styled(Link)`
   align-items: center;
   font-size: 30px;
   font-weight: 600;
-  color: #ffffff;
   text-decoration: none;
 `;
 
