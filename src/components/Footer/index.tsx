@@ -2,6 +2,7 @@ import React from "react";
 import { Container, LinkWrapper, LogoLink } from "./styles";
 
 export default function Footer() {
+  
   return (
     <Container>
       <h1>Footer</h1>
