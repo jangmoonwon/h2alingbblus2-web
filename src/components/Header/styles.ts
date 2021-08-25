@@ -8,12 +8,12 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 130px;
-  /* background-color: pink; */
-  background-color: transparent;
+  background-color: pink;
+  /* background-color: transparent; */
 `;
 
 const MainWrapper = styled.div`
-justify-content: center;
+  justify-content: center;
   align-items: center;
   background-color: blue;
   padding-left: 30px;
@@ -27,6 +27,10 @@ const Content = styled.div`
 `;
 
 const SideTabBtn = styled.button`
+  position: absolute;
+  z-index: 99999;
+  top: 30px;
+  right: 10px;
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -39,7 +43,7 @@ const MainLogo = styled.img`
 `;
 
 const SideLogo = styled.img`
-position: relative;
+  position: relative;
   width: 60px;
   height: 60px;
   background-color: green;
@@ -54,4 +58,12 @@ const TextLink = styled(Link)`
   text-decoration: none;
 `;
 
-export { Container, Content, TextLink, MainLogo, SideLogo, SideTabBtn, MainWrapper };
+export {
+  Container,
+  Content,
+  TextLink,
+  MainLogo,
+  SideLogo,
+  SideTabBtn,
+  MainWrapper,
+};
