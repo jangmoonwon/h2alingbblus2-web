@@ -1,18 +1,37 @@
-import React from "react";
-import { Container, LinkWrapper, MainLink, MainLogo, TextLink } from "./styles";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Container,
+  Content,
+  MainLogo,
+  SideLogo,
+  SideTabBtn,
+} from "./styles";
 import paths from "../../routes/paths.json";
+import SideTab from "../SideTab";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const onSideTabOpen = () => setOpen(!open);
+
   return (
     <Container>
-      <MainLink to={paths.main} >
-        <MainLogo src= "/images/mainLogo.jpg"/>
-      </MainLink>
-      <LinkWrapper>
-        <TextLink to={paths.about}>About</TextLink>
-        <TextLink to={paths.worship}>Worship</TextLink>
-        <TextLink to={paths.photo}>Photo</TextLink>
-      </LinkWrapper>
+      <Content>
+        <Link to={paths.main}>
+          <MainLogo src="/images/mainLogo.jpg" />
+        </Link>
+      </Content>
+      <Content>
+        {open && <SideTab />}
+      </Content>
+      <Content>
+        <SideTabBtn onClick={onSideTabOpen}>
+          <SideLogo
+            src={open === false ? "/images/sidemenu.png" : "/images/close.png"}
+          />
+        </SideTabBtn>
+      </Content>
     </Container>
   );
 }

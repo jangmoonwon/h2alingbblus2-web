@@ -2,37 +2,41 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  position: fixed;
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  height: 170px;
-  background-color: transparent;
+  align-items: center;
+  width: 100vw;
+  height: 130px;
+  background-color: pink;
 `;
 
-const MainLink = styled(Link)`
-  font-size: 30px;
-  text-decoration: none;
-  margin: 20px;
+const Content = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+`;
+
+const SideTabBtn = styled.button`
+  position: absolute;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
 `;
 
 const MainLogo = styled.img`
-  position: fixed;
-  top: 30px;
-  left: 30px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
 `;
 
-const LinkWrapper = styled.div`
-  display: flex;
-  gap: 70px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+const SideLogo = styled.img`
+position: relative;
+left: 100%;
+  width: 60px;
+  height: 60px;
 `;
 
 const TextLink = styled(Link)`
@@ -44,4 +48,4 @@ const TextLink = styled(Link)`
   text-decoration: none;
 `;
 
-export { Container, TextLink, MainLink, MainLogo, LinkWrapper };
+export { Container, Content, TextLink, MainLogo, SideLogo, SideTabBtn };
