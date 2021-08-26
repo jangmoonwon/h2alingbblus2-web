@@ -1,15 +1,13 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  position: absolute;
   display: flex;
+  position: absolute;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
   height: 130px;
-  background-color: pink;
-  /* background-color: transparent; */
+  /* background-color: pink; */
 `;
 
 const MainWrapper = styled.div`
@@ -22,15 +20,15 @@ const MainWrapper = styled.div`
 const Content = styled.div`
   justify-content: center;
   align-items: center;
-  background-color: yellow;
-  padding-right: 30px;
+  /* background-color: yellow; */
+  padding: 30px;
 `;
 
 const SideTabBtn = styled.button`
   position: absolute;
   z-index: 99999;
   top: 30px;
-  right: 10px;
+  right: 30px;
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -46,24 +44,7 @@ const SideLogo = styled.img`
   position: relative;
   width: 60px;
   height: 60px;
-  background-color: green;
+  /* background-color: green; */
 `;
 
-const TextLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  font-weight: 600;
-  text-decoration: none;
-`;
-
-export {
-  Container,
-  Content,
-  TextLink,
-  MainLogo,
-  SideLogo,
-  SideTabBtn,
-  MainWrapper,
-};
+export { Container, Content, MainLogo, SideLogo, SideTabBtn, MainWrapper };
