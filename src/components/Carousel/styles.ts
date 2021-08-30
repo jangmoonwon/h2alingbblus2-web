@@ -11,10 +11,23 @@ type BackgroundProps = {
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+`;
+
+const Content = styled.div`
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 35px;
+  font-weight: 600;
 `;
 
 const Images = styled.img`
@@ -30,8 +43,33 @@ const PickerWrapper = styled.div`
   transform: translate(-50%, -10px);
   display: flex;
 `;
+const TextWrapper = styled.div`
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(34, 34, 34, .45),
+      rgba(44, 62, 80, 0.23)
+    );
+  
+    /* border-radius: 30% 70% 20% 40% ; */
+`;
 
-const Picker = styled.div<BackgroundProps>`
+const MainText = styled.text`
+  font-size: 100px;
+  text-align: center;
+`;
+
+const SlideDot = styled.div<BackgroundProps>`
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -56,4 +94,13 @@ const Arrow = styled.div<ArrowProps>`
   cursor: pointer;
 `;
 
-export { Container, Images, PickerWrapper, Picker, Arrow };
+export {
+  Container,
+  Content,
+  Images,
+  PickerWrapper,
+  SlideDot,
+  Arrow,
+  TextWrapper,
+  MainText,
+};

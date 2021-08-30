@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { arrImages } from "./slideImg";
-import { Container, Images, PickerWrapper, Arrow, Picker } from "./styles";
+import {
+  Container,
+  Images,
+  PickerWrapper,
+  Arrow,
+  SlideDot,
+  Content,
+  TextWrapper,
+} from "./styles";
 
 const Carousel = (): JSX.Element => {
   const [pickers, setPickers] = useState<JSX.Element[]>([]);
@@ -55,13 +63,13 @@ const Carousel = (): JSX.Element => {
     setPickers(
       arrImages.map((_, idx) => {
         return (
-          <Picker
+          <SlideDot
             onClick={() => onPickIndex(idx)}
             background={pickIndex === idx ? "orange" : "white"}
             key={idx}
           >
             {/* state pickIndex와 자신의 idx가 같을시 색깔을 다르게 준다. */}
-          </Picker>
+          </SlideDot>
         );
       })
     );
@@ -80,19 +88,16 @@ const Carousel = (): JSX.Element => {
 
   return (
     <Container>
-      <Images src={arrImages[pickIndex]} />
-      {/* pickIndex라는 state 변수를 이용하여 그에 맞는 이미지 렌더링 */}
-      <Arrow isLeft={true} onClick={handlePrevClick}>
-        {/* <AiOutlineArrowLeft /> */}
-      </Arrow>
-      <Arrow isLeft={false} onClick={handleNextClick}>
-        {/* <AiOutlineArrowRight /> */}
-      </Arrow>
-      <PickerWrapper>
-        {pickers}
-        {/* 위에서 선언해준 pickers JSX.Element[]들을 렌더링
-          map을 해주지 않아도 렌더링이 됨 (JSX.Element[]의 특성인것 같다.) */}
-      </PickerWrapper>
+      <Content>
+        <Images src={arrImages[pickIndex]} />
+        {/* pickIndex라는 state 변수를 이용하여 그에 맞는 이미지 렌더링 */}
+        <Arrow isLeft={true} onClick={handlePrevClick}></Arrow>
+        <Arrow isLeft={false} onClick={handleNextClick}></Arrow>
+        <PickerWrapper>{pickers}</PickerWrapper>
+        <TextWrapper>
+          <TextWrapper>MINISTRY</TextWrapper>
+        </TextWrapper>
+      </Content>
     </Container>
   );
 };
