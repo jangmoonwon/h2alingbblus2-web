@@ -35,6 +35,10 @@ const SideTabBtn = styled.button`
 `;
 
 const MainLogo = styled.img`
+  position: absolute;
+  z-index: 99999;
+  top: 30px;
+  left: 30px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -42,8 +46,9 @@ const MainLogo = styled.img`
 
 const SideLogo = styled.img`
   position: relative;
-  width: 60px;
-  height: 60px;
+  bottom: 17px;
+  width: 80px;
+  height: 80px;
   /* background-color: green; */
 `;
 

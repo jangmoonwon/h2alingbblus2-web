@@ -4,8 +4,7 @@ import { Container, MainLogo, SideLogo, SideTabBtn, Content } from "./styles";
 import paths from "../../routes/paths.json";
 import SideBar from "../SideBar";
 
-
-export default function Header() {
+ function Header() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const OpenSideBar = () => setSideBarOpen(!sideBarOpen);
 
@@ -22,7 +21,7 @@ export default function Header() {
           <SideLogo
             src={
               sideBarOpen === false
-                ? "/images/sidemenu.png"
+                ? "/images/more.png"
                 : "/images/close.png"
             }
           />
@@ -31,3 +30,5 @@ export default function Header() {
     </Container>
   );
 }
+
+export default Header;
