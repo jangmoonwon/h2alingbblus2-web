@@ -7,6 +7,7 @@ import {
   TextWrapper,
   SnsWrapper,
   SnsLink,
+  SnsLinkLogo,
 } from "./styles";
 
 type SideBarProps = {
@@ -26,20 +27,20 @@ const SideBar = (props: SideBarProps) => {
         </TextWrapper>
         <SnsWrapper>
           <SnsLink href={"https://www.instagram.com/h2aling_bblus2/"}>
-            <p>인스타</p>
-          </SnsLink>
-          <SnsLink href={"http://www.gcmch.org/kjmch/index_tong.asp"}>
-            <p>강화중앙교회</p>
-          </SnsLink>
-          <SnsLink
-            href={"https://www.youtube.com/channel/UCz3IrmZSylgR8i5uOQi4eaw"}
-          >
-            <p>유튜브</p>
+            <SnsLinkLogo src="/images/instagram.png" alt="instagram" />
           </SnsLink>
           <SnsLink
             href={"https://www.facebook.com/GanghwajungAngGyohoeCheongnyeonbu/"}
           >
-            <p>페이스북</p>
+            <SnsLinkLogo src="/images/facebook.png" alt="facebook" />
+          </SnsLink>
+          <SnsLink
+            href={"https://www.youtube.com/channel/UCz3IrmZSylgR8i5uOQi4eaw"}
+          >
+            <SnsLinkLogo src="/images/youtube.png" alt="youtube" />
+          </SnsLink>
+          <SnsLink href={"http://www.gcmch.org/kjmch/index_tong.asp"}>
+            <SnsLinkLogo src="/images/church.png" alt="church" />
           </SnsLink>
         </SnsWrapper>
       </SideBarLayout>

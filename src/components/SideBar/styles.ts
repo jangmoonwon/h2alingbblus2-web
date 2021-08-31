@@ -14,7 +14,7 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(34, 34, 34, 0.5);
+  background-color: rgba(34, 34, 34, 0.6);
 `;
 
 const SideBarLayout = styled.div<SideBarLayoutProps>`
@@ -26,7 +26,7 @@ const SideBarLayout = styled.div<SideBarLayoutProps>`
   top: 0;
   right: 0;
   z-index: 100;
-  background-color: #f3f1f5;
+  background-color: #f5ebe9;
   ${(props) => {
     if (props.active) {
       return css`
@@ -39,42 +39,38 @@ const SideBarLayout = styled.div<SideBarLayoutProps>`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20vh;
+  margin: 20vh 0 27vh 0;
   gap: 50px;
   width: 30vw;
   height: 40vh;
-  /* background-color: palegoldenrod; */
-`;
-
-const SnsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: space-around;
-  margin-top: 20vh;
-  width: 30vw;
-  height: 20vh;
-  flex-direction: column;
-
-  background-color: #FFE2E2;
 `;
 
 const TextLink = styled(Link)`
   text-align: center;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 55px;
+  font-weight: 800;
   text-decoration: none;
-  color: #131313;
+  color: #003638;
+  &:hover {
+    color: red;
+  }
+`;
+
+const SnsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  width: 28vw;
+  height: 10vh;
 `;
 
 const SnsLink = styled.a`
-  display: flex;
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #444941;
-  /* background-color: violet; */
+`;
+
+const SnsLinkLogo = styled.img`
+  width: 40px;
+  height: 40px;
 `;
 
 const SideBarEffect = keyframes`
@@ -89,4 +85,12 @@ to {
 }
 `;
 
-export { Container, SideBarLayout, TextLink, TextWrapper, SnsLink, SnsWrapper };
+export {
+  Container,
+  SideBarLayout,
+  TextLink,
+  TextWrapper,
+  SnsLink,
+  SnsWrapper,
+  SnsLinkLogo,
+};
