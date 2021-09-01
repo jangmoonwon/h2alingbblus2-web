@@ -14,19 +14,20 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(34, 34, 34, 0.6);
+  background-color: rgba(34, 34, 34, 0.7);
 `;
 
 const SideBarLayout = styled.div<SideBarLayoutProps>`
   justify-content: center;
   align-items: center;
-  width: 30vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
+  width: 27vw;
+  height: 93vh;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   z-index: 100;
   background-color: #f5ebe9;
+  border-radius: 17px;
   ${(props) => {
     if (props.active) {
       return css`
@@ -39,16 +40,16 @@ const SideBarLayout = styled.div<SideBarLayoutProps>`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 20vh 0 27vh 0;
+  margin: 17vh 0 23vh 0;
   gap: 50px;
-  width: 30vw;
+  width: 27vw;
   height: 40vh;
 `;
 
 const TextLink = styled(Link)`
   text-align: center;
-  font-size: 55px;
-  font-weight: 800;
+  font-size: 50px;
+  /* font-weight: 800; */
   text-decoration: none;
   color: #003638;
   &:hover {
@@ -61,16 +62,18 @@ const SnsWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   margin: auto;
-  width: 28vw;
+  width: 25vw;
   height: 10vh;
+  background-color: #d4c3c3;
+  border-radius: 8px;
 `;
 
 const SnsLink = styled.a`
 `;
 
 const SnsLinkLogo = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
 `;
 
 const SideBarEffect = keyframes`

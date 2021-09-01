@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+type SideBarBtnProps = {
+  isOpen: boolean;
+};
 
 const Container = styled.div`
   display: flex;
@@ -7,7 +11,6 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 130px;
-  /* background-color: pink; */
 `;
 
 const MainWrapper = styled.div`
@@ -20,36 +23,56 @@ const MainWrapper = styled.div`
 const Content = styled.div`
   justify-content: center;
   align-items: center;
-  /* background-color: yellow; */
   padding: 30px;
 `;
 
-const SideTabBtn = styled.button`
+const SideBarBtn = styled.button<SideBarBtnProps>`
   position: absolute;
   z-index: 99999;
-  top: 30px;
-  right: 30px;
-  background-color: transparent;
+  top: 33px;
+  right: 33px;
+  width: 70px;
+  height: 70px;
+  background-color: #003638;
   border-color: transparent;
+  border-radius: 50%;
   cursor: pointer;
+  &:hover {
+    background-color: #005659;
+  }
+  &:active {
+    background: #002526;
+  }
+  transition: 0.125s all ease-in;
+  ${(props) => {
+    if (props.isOpen === true) {
+      return css`
+        background: #962D2D;
+        &:hover {
+          background: #ba3a3a;
+        }
+        &:active {
+          background: #6e2222;
+        }
+        transform: rotate(45deg);
+      `;
+    }
+  }};
 `;
 
 const MainLogo = styled.img`
   position: absolute;
   z-index: 99999;
-  top: 30px;
-  left: 30px;
-  width: 80px;
-  height: 80px;
+  top: 33px;
+  left: 33px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
 `;
 
-const SideLogo = styled.img`
-  position: relative;
-  bottom: 17px;
-  width: 80px;
-  height: 80px;
-  /* background-color: green; */
+const SideBarLogo = styled.img`
+  width: 35px;
+  height: 35px;
 `;
 
-export { Container, Content, MainLogo, SideLogo, SideTabBtn, MainWrapper };
+export { Container, Content, MainLogo, SideBarLogo, SideBarBtn, MainWrapper };

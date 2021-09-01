@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Container, MainLogo, SideLogo, SideTabBtn, Content } from "./styles";
+import {
+  Container,
+  MainLogo,
+  SideBarLogo,
+  SideBarBtn,
+  Content,
+} from "./styles";
 import paths from "../../routes/paths.json";
 import SideBar from "../SideBar";
 
- function Header() {
+function Header() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const OpenSideBar = () => setSideBarOpen(!sideBarOpen);
+  const ClickSideBar = () => setSideBarOpen(!sideBarOpen);
 
   return (
     <Container>
-      <Content >
+      <Content>
         <Link to={paths.main}>
-          <MainLogo src="/images/mainLogo.jpg" />
+          <MainLogo src="/images/mainLogo.jpg" alt="mainLogo" />
         </Link>
       </Content>
       <Content>
-        {sideBarOpen && <SideBar active/>}
-        <SideTabBtn onClick={OpenSideBar}>
-          <SideLogo
-            src={
-              sideBarOpen === false
-                ? "/images/more.png"
-                : "/images/close.png"
-            }
-          />
-        </SideTabBtn>
+        {sideBarOpen && <SideBar active />}
+        <SideBarBtn onClick={ClickSideBar} isOpen={sideBarOpen}>
+          <SideBarLogo src="/images/plus.png" alt="sideBarMenu" />
+        </SideBarBtn>
       </Content>
     </Container>
   );
