@@ -2,16 +2,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   /* background-image-size: 1440 X 790 */
-
-  /* background-image: linear-gradient(
-      to bottom,
-      rgba(34, 34, 34, 0.85),
-      rgba(44, 62, 80, 0.43)
-    ),
-    url("/images/mainImg.jpg"); */
   width: 100vw;
   height: 100vh;
-  object-fit: contain;
   overflow: auto;
   scroll-snap-type: y mandatory;
 `;
