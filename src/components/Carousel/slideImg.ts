@@ -1,4 +1,4 @@
-export const arrImages: string[] = [
+export const sildeImg: string[] = [
     "/images/mainImg.jpg",
     "/images/photoTree.jpg",
   ];

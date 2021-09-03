@@ -17,6 +17,6 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         margin: 0 auto;
-        font-family: "Cafe24Oneprettynight";
+        /* font-family: "Cafe24Oneprettynight"; */
     }
 `;

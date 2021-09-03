@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { arrImages } from "./slideImg";
+import { sildeImg } from "./slideImg";
 import {
   Container,
   Images,
@@ -23,7 +23,7 @@ const Carousel = (): JSX.Element => {
     if (pickIndex <= 0) {
       // state 업데이트 전, 해당 변수의 값이 0이라면
 
-      setPickIndex(arrImages.length - 1);
+      setPickIndex(sildeImg.length - 1);
       // length의 -1로 지정하여 가장 마지막으로 이동한다.
 
       return;
@@ -35,7 +35,7 @@ const Carousel = (): JSX.Element => {
 
   // 오른쪽 화살표 클릭
   const handleNextClick = useCallback((): void => {
-    if (pickIndex + 1 === arrImages.length) {
+    if (pickIndex + 1 === sildeImg.length) {
       // +1 했을 때, 배열의 인덱스를 벗어난다면
 
       setPickIndex(0);
@@ -61,11 +61,11 @@ const Carousel = (): JSX.Element => {
 
   useEffect(() => {
     setPickers(
-      arrImages.map((_, idx) => {
+      sildeImg.map((_, idx) => {
         return (
           <SlideDot
             onClick={() => onPickIndex(idx)}
-            background={pickIndex === idx ? "orange" : "white"}
+            background={pickIndex === idx ? "white" : "transparent"}
             key={idx}
           >
             {/* state pickIndex와 자신의 idx가 같을시 색깔을 다르게 준다. */}
@@ -84,18 +84,29 @@ const Carousel = (): JSX.Element => {
     return () => {
       clearInterval(imageInterval);
     };
-  }, [imageIndex, handleNextClick, handlePrevClick, pickers]);
+  }, [imageIndex, handleNextClick, handlePrevClick]);
 
   return (
     <Container>
       <Content>
-        <Images src={arrImages[pickIndex]} />
+        <Images
+          src={sildeImg[pickIndex]}
+          style={{ backgroundColor: "ivory" }}
+        />
         {/* pickIndex라는 state 변수를 이용하여 그에 맞는 이미지 렌더링 */}
-        <Arrow isLeft={true} onClick={handlePrevClick}></Arrow>
-        <Arrow isLeft={false} onClick={handleNextClick}></Arrow>
+        <Arrow isLeft={true} onClick={handlePrevClick}>
+          @
+        </Arrow>
+        <Arrow isLeft={false} onClick={handleNextClick}>
+          @
+        </Arrow>
         <PickerWrapper>{pickers}</PickerWrapper>
         <TextWrapper>
-          <TextWrapper>MINISTRY</TextWrapper>
+          <h2>MINISTRY</h2>
+          <div style={{ marginTop: "30px" }}>
+            <h3>Scroll To</h3>
+            <img src="/images/mouse.png" alt="mouse" />
+          </div>
         </TextWrapper>
       </Content>
     </Container>
