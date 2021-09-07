@@ -7,7 +7,6 @@ import {
   Arrow,
   SlideDot,
   Content,
-  TextWrapper,
 } from "./styles";
 
 const Carousel = (): JSX.Element => {
@@ -95,19 +94,12 @@ const Carousel = (): JSX.Element => {
         />
         {/* pickIndex라는 state 변수를 이용하여 그에 맞는 이미지 렌더링 */}
         <Arrow isLeft={true} onClick={handlePrevClick}>
-          @
+          ◀︎
         </Arrow>
         <Arrow isLeft={false} onClick={handleNextClick}>
-          @
+          ▶︎
         </Arrow>
         <PickerWrapper>{pickers}</PickerWrapper>
-        <TextWrapper>
-          <h2>MINISTRY</h2>
-          <div style={{ marginTop: "30px" }}>
-            <h3>Scroll To</h3>
-            <img src="/images/mouse.png" alt="mouse" />
-          </div>
-        </TextWrapper>
       </Content>
     </Container>
   );

@@ -9,32 +9,29 @@ type BackgroundProps = {
 };
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 70vw;
+  height: 65vh;
+  border-radius: 8px;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow: auto;
-  scroll-snap-type: y mandatory;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const Content = styled.div`
-  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-size: 35px;
-  font-weight: 600;
+  height: 65vh;
 `;
 
 const Images = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  background-image: red;
+  border-radius: 8px;
+  object-fit: fill;
 `;
 
 const PickerWrapper = styled.div`
@@ -44,22 +41,6 @@ const PickerWrapper = styled.div`
   bottom: 10px;
   transform: translate(-50%, -10px);
   display: flex;
-`;
-
-const TextWrapper = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: 800;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(34, 34, 34, 0.75),
-    rgba(44, 62, 80, 0.23)
-  );
 `;
 
 const SlideDot = styled.div<BackgroundProps>`
@@ -73,32 +54,24 @@ const SlideDot = styled.div<BackgroundProps>`
 `;
 
 const Arrow = styled.div<ArrowProps>`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: transparent;
   border-radius: 20%;
   position: absolute;
   z-index: 99;
   top: 50%;
-  ${(props) => (props.isLeft ? "left: 7px" : "right: 7px")};
+  ${(props) => (props.isLeft ? "left: 5px" : "right: 5px")};
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  color: white;
+  font-size: 45px;
+  color: #131313;
   cursor: pointer;
   transition: 0.175s all ease-in;
   &:hover {
-    background-color: rgba(255, 255, 255, 0.45);
+    background-color: rgba(204, 198, 198, 0.75);
   }
 `;
 
-export {
-  Container,
-  Content,
-  Images,
-  PickerWrapper,
-  SlideDot,
-  Arrow,
-  TextWrapper,
-};
+export { Container, Content, Images, PickerWrapper, SlideDot, Arrow };

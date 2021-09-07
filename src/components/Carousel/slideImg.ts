@@ -1,4 +1,6 @@
 export const sildeImg: string[] = [
-    "/images/mainImg.jpg",
-    "/images/photoTree.jpg",
-  ];
+  "/images/wanted.jpg",
+  "/images/songList.jpg",
+  "/images/mainImg.jpg",
+  "/images/photoTree.jpg",
+];
