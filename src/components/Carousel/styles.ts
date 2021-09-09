@@ -9,9 +9,9 @@ type BackgroundProps = {
 };
 
 const Container = styled.div`
-  width: 70vw;
-  height: 65vh;
-  border-radius: 8px;
+  width: 45vw;
+  height: 60vh;
+  border-radius: 0 8px 8px 0;
   position: relative;
   top: 50%;
   left: 50%;
@@ -24,13 +24,14 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 65vh;
+  height: 60vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const Images = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 0 8px 8px 0;
   object-fit: fill;
 `;
 

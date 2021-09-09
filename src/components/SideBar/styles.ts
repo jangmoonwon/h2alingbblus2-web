@@ -37,7 +37,7 @@ const SideBarLayout = styled.div<SideBarLayoutProps>`
   }};
 `;
 
-const TextWrapper = styled.div`
+const TextLinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 17vh 0 23vh 0;
@@ -49,9 +49,9 @@ const TextWrapper = styled.div`
 const TextLink = styled(Link)`
   text-align: center;
   font-size: 50px;
-  /* font-weight: 800; */
   text-decoration: none;
   color: #003638;
+  background-color: burlywood;
   &:hover {
     color: red;
   }
@@ -66,6 +66,7 @@ const SnsWrapper = styled.div`
   height: 10vh;
   background-color: #d4c3c3;
   border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 `;
 
 const SnsLink = styled.a`
@@ -92,7 +93,7 @@ export {
   Container,
   SideBarLayout,
   TextLink,
-  TextWrapper,
+  TextLinkWrapper,
   SnsLink,
   SnsWrapper,
   SnsLinkLogo,

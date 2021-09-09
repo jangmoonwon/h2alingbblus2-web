@@ -98,8 +98,8 @@ const Profile = styled.div`
   border-radius: 0 0 3px 3px;
   background-image: linear-gradient(
       to bottom,
-      rgba(230, 140, 115, 0.75),
-      rgba(230, 140, 115, 0.35)
+      rgba(227, 113, 82, 0.75),
+      rgba(227, 113, 82, 0.35)
     ),
     url("/images/userImg.jpg");
 `;
