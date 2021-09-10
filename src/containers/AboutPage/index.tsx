@@ -53,26 +53,59 @@ function AboutPage() {
           gap: 100,
           flexWrap: "wrap",
           backgroundColor: "#b9b4a8",
+          height: "170vh",
+        }}
+      >
+        <ProfileCard style={{ backgroundColor: "#bf4b75"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard style={{backgroundColor: "#bf4b75"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard style={{backgroundColor: "#bf4b75"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard style={{marginBottom: "350px", backgroundColor: "#bf4b75"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard style={{backgroundColor: "#bf4b75"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+      </ProfileWrapper>
+      <ProfileWrapper
+        style={{
+          gap: 100,
+          flexWrap: "wrap",
+          backgroundColor: "#b9b4a8",
           height: "150vh",
         }}
       >
-        <ProfileCard>
+        <ProfileCard style={{backgroundColor: "#d98c8b" }}>
           <ProfileContent />
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard>
+        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
           <ProfileContent />
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard>
+        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
           <ProfileContent />
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{marginBottom: "350px"}}>
+        <ProfileCard style={{ backgroundColor: "#d98c8b", marginBottom: "350px"}}>
           <ProfileContent />
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard>
+        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
           <ProfileContent />
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>

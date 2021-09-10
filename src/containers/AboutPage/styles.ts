@@ -103,7 +103,7 @@ const ProfileCard = styled.div`
   width: 300px;
   height: 500px;
   border-radius: 23px;
-  background-color: #fe935e;
+  background-color: #654173;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 `;
@@ -129,11 +129,12 @@ const ScrollButton = styled.div`
 position: absolute;
 z-index: 12;
 right: 30px;
-top: 330%;
-width: 50px;
-height: 50px;
+top: 500%;
+width: 80px;
+height: 80px;
+font-size: 80px;
 text-align: center;
-background-color: violet;
+background-color: transparent;
 border: transparent;
 border-radius: 50%;
 cursor: pointer;
