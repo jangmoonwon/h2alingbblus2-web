@@ -1,15 +1,18 @@
 import React, { useRef } from "react";
 import {
   Container,
-  TextContainer,
+  TextWrapper,
   StyledBox,
   StyledBox2,
+  StyledBox3,
   StyledBorder,
-  Text,
-  ProfileContainer,
-  ProfileLayout,
-  ProfileComment,
+  HeaderText,
+  ArticleText,
+  ProfileWrapper,
+  ProfileCard,
   Profile,
+  ProfileContent,
+  ScrollButton,
 } from "./styles";
 
 function AboutPage() {
@@ -25,9 +28,10 @@ function AboutPage() {
     <Container>
       <StyledBox />
       <StyledBox2 />
+      <StyledBox3 />
       <StyledBorder />
-      <TextContainer ref={buttonRef}>
-        <Text>
+      <TextWrapper ref={buttonRef}>
+        <HeaderText>
           사랑스럽고, <br />
           과즙미넘치는 <br />
           유쾌하고,
@@ -35,22 +39,45 @@ function AboutPage() {
           자유로운
           <br />
           청년부
-        </Text>
-      </TextContainer>
-      <ProfileContainer>
-        <ProfileLayout>
-          <ProfileComment>
-            <h3>"Hello"</h3>
-          </ProfileComment>
-          <Profile>
-            <h3>목사님</h3>
-          </Profile>
-        </ProfileLayout>
-        <ProfileLayout />
-      </ProfileContainer>
-      <button type="button" onClick={scrollToTop}>
-        Btn
-      </button>
+        </HeaderText>
+      </TextWrapper>
+      <ProfileWrapper>
+        <ArticleText>청년부 섬김이들을 소개합니다.</ArticleText>
+        <ProfileCard style={{ marginTop: 300 }}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+      </ProfileWrapper>
+      <ProfileWrapper
+        style={{
+          gap: 100,
+          flexWrap: "wrap",
+          backgroundColor: "#b9b4a8",
+          height: "150vh",
+        }}
+      >
+        <ProfileCard>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard style={{marginBottom: "350px"}}>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ProfileCard>
+          <ProfileContent />
+          <Profile src="/images/userImg.jpg" alt="Profile" />
+        </ProfileCard>
+        <ScrollButton onClick={scrollToTop}>↑</ScrollButton>
+      </ProfileWrapper>
     </Container>
   );
 }
