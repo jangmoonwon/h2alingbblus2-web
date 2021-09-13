@@ -13,6 +13,9 @@ import {
   Profile,
   ProfileContent,
   ScrollButton,
+  ProfileName,
+  ProfileLabel,
+  ScrollImg,
 } from "./styles";
 
 function AboutPage() {
@@ -44,7 +47,10 @@ function AboutPage() {
       <ProfileWrapper>
         <ArticleText>청년부 섬김이들을 소개합니다.</ArticleText>
         <ProfileCard style={{ marginTop: 300 }}>
-          <ProfileContent />
+          <ProfileContent>
+            <ProfileName>OOO 목사님</ProfileName>
+            <ProfileLabel>교육목사</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
       </ProfileWrapper>
@@ -56,24 +62,41 @@ function AboutPage() {
           height: "170vh",
         }}
       >
-        <ProfileCard style={{ backgroundColor: "#bf4b75"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#bf4b75" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 임원</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#bf4b75"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#bf4b75" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 임원</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#bf4b75"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#bf4b75" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 임원</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{marginBottom: "350px", backgroundColor: "#bf4b75"}}>
-          <ProfileContent />
+        <ProfileCard
+          style={{ marginBottom: "350px", backgroundColor: "#bf4b75" }}
+        >
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 임원</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#bf4b75"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#bf4b75" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 임원</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
       </ProfileWrapper>
@@ -85,31 +108,53 @@ function AboutPage() {
           height: "150vh",
         }}
       >
-        <ProfileCard style={{backgroundColor: "#d98c8b" }}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#d98c8b" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 찬양단</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#d98c8b" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 찬양단</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#d98c8b" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 찬양단</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{ backgroundColor: "#d98c8b", marginBottom: "350px"}}>
-          <ProfileContent />
+        <ProfileCard
+          style={{ backgroundColor: "#d98c8b", marginBottom: "350px" }}
+        >
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 찬양단</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#d98c8b" }}>
+          <ProfileContent>
+            <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 찬양단</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{backgroundColor: "#d98c8b"}}>
-          <ProfileContent />
+        <ProfileCard style={{ backgroundColor: "#d98c8b" }}>
+          <ProfileContent >
+          <ProfileName>OOO 청년</ProfileName>
+            <ProfileLabel>청년부 찬양단</ProfileLabel>
+          </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ScrollButton onClick={scrollToTop}>↑</ScrollButton>
+        <ScrollButton onClick={scrollToTop}>
+          <ScrollImg src="/images/scrollTop.png" alt="scrollbtn"/>
+        </ScrollButton>
       </ProfileWrapper>
     </Container>
   );

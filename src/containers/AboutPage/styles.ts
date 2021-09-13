@@ -96,7 +96,6 @@ const ProfileWrapper = styled.div`
   background-color: #b9b4a8;
 `;
 
-
 const ProfileCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -126,18 +125,38 @@ const Profile = styled.img`
 `;
 
 const ScrollButton = styled.div`
-position: absolute;
-z-index: 12;
-right: 30px;
-top: 500%;
-width: 80px;
-height: 80px;
-font-size: 80px;
-text-align: center;
-background-color: transparent;
-border: transparent;
-border-radius: 50%;
-cursor: pointer;
+  position: absolute;
+  z-index: 12;
+  right: 40px;
+  top: 503%;
+  width: 80px;
+  height: 100px;
+  font-size: 80px;
+  background-color: pink;
+  border: transparent;
+  border-radius: 17%;
+  cursor: pointer;
+`;
+
+const ProfileName = styled.h1`
+  margin-top: 340px;
+  color: #002526;
+  text-align: center;
+  font-family: "Cafe24Oneprettynight";
+`;
+
+const ProfileLabel = styled.h1`
+  margin-top: 70px;
+  color: #f5ebe9;
+  text-align: center;
+  font-family: "Cafe24Oneprettynight";
+`;
+
+const ScrollImg = styled.img`
+  width: 100px;
+  height: 100px;
+  transform: scaleX(-1) rotate(270deg);
+  margin: 0 auto;
 `;
 
 export {
@@ -154,4 +173,7 @@ export {
   ProfileContent,
   Profile,
   ScrollButton,
+  ProfileName,
+  ProfileLabel,
+  ScrollImg,
 };
