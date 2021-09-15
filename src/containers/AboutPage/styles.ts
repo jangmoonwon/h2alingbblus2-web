@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const StyledBox = styled.div`
+type ProfileCardProps = {
+  label: string;
+};
+
+const CrimsonBox = styled.div`
   position: absolute;
   z-index: 10;
   top: 100px;
@@ -14,7 +18,7 @@ const StyledBox = styled.div`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 `;
 
-const StyledBox2 = styled.div`
+const TurquoiseBox = styled.div`
   position: absolute;
   z-index: 10;
   bottom: 70px;
@@ -28,7 +32,7 @@ const StyledBox2 = styled.div`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 `;
 
-const StyledBox3 = styled.div`
+const YellowBox = styled.div`
   position: absolute;
   z-index: 9;
   top: 90%;
@@ -53,19 +57,20 @@ const StyledBorder = styled.div`
 `;
 const Container = styled.div`
   width: 100vw;
-  height: 80vh;
+  height: auto;
   background-color: #f5ebe9;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
 `;
 
 const TextWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 80vh;
-  overflow: auto;
-  position: relative;
 `;
 
 const HeaderText = styled.div`
@@ -96,13 +101,18 @@ const ProfileWrapper = styled.div`
   background-color: #b9b4a8;
 `;
 
-const ProfileCard = styled.div`
+const ProfileCard = styled.div<ProfileCardProps>`
   display: flex;
   flex-direction: column;
   width: 300px;
   height: 500px;
   border-radius: 23px;
-  background-color: #654173;
+  background-color: ${(props) => {
+    if (props.label === "pastorCard") return "#654173";
+    if (props.label === "executivesCard") return "#bf4b75";
+    if (props.label === "choirCard") return "#d98c8b";
+    return "#c7c7c7";
+  }};
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 `;
@@ -127,15 +137,18 @@ const Profile = styled.img`
 const ScrollButton = styled.div`
   position: absolute;
   z-index: 12;
-  right: 40px;
-  top: 503%;
-  width: 80px;
-  height: 100px;
+  right: 30px;
+  top: 507%;
+  width: 60px;
+  height: 60px;
   font-size: 80px;
-  background-color: pink;
+  border-radius: 11px;
   border: transparent;
-  border-radius: 17%;
+  transition: 0.1s all ease-in;
   cursor: pointer;
+  &:hover {
+    background-color: rgba(97, 105, 105, 0.75);
+  }
 `;
 
 const ProfileName = styled.h1`
@@ -153,18 +166,30 @@ const ProfileLabel = styled.h1`
 `;
 
 const ScrollImg = styled.img`
-  width: 100px;
-  height: 100px;
-  transform: scaleX(-1) rotate(270deg);
-  margin: 0 auto;
+  position: absolute;
+  z-index: 12;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+`;
+
+const ScrollText = styled.text`
+  position: absolute;
+  z-index: 12;
+  right: 12px;
+  bottom: 0;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Cafe24Oneprettynight";
+  color: #f5ebe9;
 `;
 
 export {
   Container,
   TextWrapper,
-  StyledBox,
-  StyledBox2,
-  StyledBox3,
+  CrimsonBox,
+  TurquoiseBox,
+  YellowBox,
   StyledBorder,
   HeaderText,
   ArticleText,
@@ -176,4 +201,5 @@ export {
   ProfileName,
   ProfileLabel,
   ScrollImg,
+  ScrollText,
 };
