@@ -1,8 +1,12 @@
 import styled, { css, keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type SideBarLayoutProps = {
   active: any;
+};
+
+type WrapperProps = {
+  label: string;
 };
 
 const Container = styled.div`
@@ -18,11 +22,9 @@ const Container = styled.div`
 `;
 
 const SideBarLayout = styled.div<SideBarLayoutProps>`
-  justify-content: center;
-  align-items: center;
+  position: absolute;
   width: 27vw;
   height: 93vh;
-  position: absolute;
   top: 20px;
   right: 20px;
   z-index: 100;
@@ -37,40 +39,62 @@ const SideBarLayout = styled.div<SideBarLayoutProps>`
   }};
 `;
 
-const TextLinkWrapper = styled.div`
+const Wrapper = styled.div<WrapperProps>`
   display: flex;
-  flex-direction: column;
-  margin: 17vh 0 23vh 0;
-  gap: 50px;
-  width: 27vw;
-  height: 40vh;
+  flex-direction: ${(props) => {
+    if (props.label === "textLink") return "column";
+    if (props.label === "snsLink") return "row";
+  }};
+  justify-content: ${(props) => {
+    if (props.label === "textLink") return "center";
+    if (props.label === "snsLink") return "space-around";
+  }};
+  align-items: center;
+  margin: auto;
+  width: 25vw;
+  height: ${(props) => {
+    if (props.label === "textLink") return "40vh";
+    if (props.label === "snsLink") return "10vh";
+  }};
+  background-color: ${(props) => {
+    if (props.label === "textLink") return "transparent";
+    if (props.label === "snsLink") return "#d4c3c3";
+  }};
+  border-radius: ${(props) => {
+    if (props.label === "textLink") return "none";
+    if (props.label === "snsLink") return "8px";
+  }};
+  box-shadow: ${(props) => {
+    if (props.label === "textLink") return "none";
+    if (props.label === "snsLink") return "rgba(0, 0, 0, 0.24) 0px 3px 8px";
+  }};
+  margin-top: 150px;
 `;
 
-const TextLink = styled(Link)`
-  text-align: center;
+const TextLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
   font-size: 50px;
   text-decoration: none;
   color: #003638;
-  background-color: burlywood;
+  width: 17vw;
+  height: 10vh;
   &:hover {
-    color: red;
+    color: #00a5ab;
+  }
+  &:active {
+    color: #00858a;
+  }
+  &.active {
+    color: #00a5ab;
+    background-color: rgba(212, 195, 195, 0.35);
+    border-radius: 8px;
   }
 `;
 
-const SnsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: auto;
-  width: 25vw;
-  height: 10vh;
-  background-color: #d4c3c3;
-  border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-`;
-
-const SnsLink = styled.a`
-`;
+const SnsLink = styled.a``;
 
 const SnsLinkLogo = styled.img`
   width: 37px;
@@ -89,12 +113,4 @@ to {
 }
 `;
 
-export {
-  Container,
-  SideBarLayout,
-  TextLink,
-  TextLinkWrapper,
-  SnsLink,
-  SnsWrapper,
-  SnsLinkLogo,
-};
+export { Container, SideBarLayout, Wrapper, TextLink, SnsLink, SnsLinkLogo };

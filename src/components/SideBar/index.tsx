@@ -4,8 +4,7 @@ import {
   Container,
   SideBarLayout,
   TextLink,
-  TextLinkWrapper,
-  SnsWrapper,
+  Wrapper,
   SnsLink,
   SnsLinkLogo,
 } from "./styles";
@@ -20,12 +19,12 @@ const SideBar = (props: SideBarProps) => {
   return (
     <Container>
       <SideBarLayout active={active}>
-        <TextLinkWrapper>
-          <TextLink to={paths.about} >about</TextLink>
+        <Wrapper label="textLink">
+          <TextLink to={paths.about}>about</TextLink>
           <TextLink to={paths.worship}>worship</TextLink>
           <TextLink to={paths.photo}>photo</TextLink>
-        </TextLinkWrapper>
-        <SnsWrapper>
+        </Wrapper>
+        <Wrapper label="snsLink">
           <SnsLink href={"https://www.instagram.com/h2aling_bblus2/"}>
             <SnsLinkLogo src="/images/instagram.png" alt="instagram" />
           </SnsLink>
@@ -42,7 +41,7 @@ const SideBar = (props: SideBarProps) => {
           <SnsLink href={"http://www.gcmch.org/kjmch/index_tong.asp"}>
             <SnsLinkLogo src="/images/church.png" alt="church" />
           </SnsLink>
-        </SnsWrapper>
+        </Wrapper>
       </SideBarLayout>
     </Container>
   );
