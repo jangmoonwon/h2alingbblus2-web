@@ -6,7 +6,7 @@ type SideBarLayoutProps = {
 };
 
 type WrapperProps = {
-  label: string;
+  desc: string;
 };
 
 const Container = styled.div`
@@ -42,31 +42,31 @@ const SideBarLayout = styled.div<SideBarLayoutProps>`
 const Wrapper = styled.div<WrapperProps>`
   display: flex;
   flex-direction: ${(props) => {
-    if (props.label === "textLink") return "column";
-    if (props.label === "snsLink") return "row";
+    if (props.desc === "textLink") return "column";
+    if (props.desc === "snsLink") return "row";
   }};
   justify-content: ${(props) => {
-    if (props.label === "textLink") return "center";
-    if (props.label === "snsLink") return "space-around";
+    if (props.desc === "textLink") return "center";
+    if (props.desc === "snsLink") return "space-around";
   }};
   align-items: center;
   margin: auto;
   width: 25vw;
   height: ${(props) => {
-    if (props.label === "textLink") return "40vh";
-    if (props.label === "snsLink") return "10vh";
+    if (props.desc === "textLink") return "40vh";
+    if (props.desc === "snsLink") return "10vh";
   }};
   background-color: ${(props) => {
-    if (props.label === "textLink") return "transparent";
-    if (props.label === "snsLink") return "#d4c3c3";
+    if (props.desc === "textLink") return "transparent";
+    if (props.desc === "snsLink") return "#d4c3c3";
   }};
   border-radius: ${(props) => {
-    if (props.label === "textLink") return "none";
-    if (props.label === "snsLink") return "8px";
+    if (props.desc === "textLink") return "none";
+    if (props.desc === "snsLink") return "8px";
   }};
   box-shadow: ${(props) => {
-    if (props.label === "textLink") return "none";
-    if (props.label === "snsLink") return "rgba(0, 0, 0, 0.24) 0px 3px 8px";
+    if (props.desc === "textLink") return "none";
+    if (props.desc === "snsLink") return "rgba(0, 0, 0, 0.24) 0px 3px 8px";
   }};
   margin-top: 150px;
 `;
@@ -77,6 +77,8 @@ const TextLink = styled(NavLink)`
   justify-content: center;
   margin: auto;
   font-size: 50px;
+  font-family: "NanumSquareExtraBold";
+  font-weight: 400;
   text-decoration: none;
   color: #003638;
   width: 17vw;

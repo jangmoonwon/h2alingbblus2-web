@@ -11,12 +11,10 @@ type BackgroundProps = {
 const Container = styled.div`
   width: 45vw;
   height: 60vh;
-  border-radius: 0 8px 8px 0;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const Content = styled.div`
@@ -25,13 +23,11 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   height: 60vh;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const Images = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 0 8px 8px 0;
   object-fit: fill;
 `;
 

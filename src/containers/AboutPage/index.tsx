@@ -19,7 +19,6 @@ import {
   ScrollText,
 } from "./styles";
 
-
 function AboutPage() {
   const buttonRef = useRef<any>();
   const scrollToTop = () => {
@@ -48,7 +47,7 @@ function AboutPage() {
       </TextWrapper>
       <ProfileWrapper>
         <ArticleText>청년부 섬김이들을 소개합니다.</ArticleText>
-        <ProfileCard style={{ marginTop: 300 }} label="pastorCard">
+        <ProfileCard style={{ marginTop: 300 }} desc="pastorCard">
           <ProfileContent>
             <ProfileName>OOO 목사님</ProfileName>
             <ProfileLabel>교육목사</ProfileLabel>
@@ -63,35 +62,35 @@ function AboutPage() {
           height: "170vh",
         }}
       >
-        <ProfileCard label="executivesCard">
+        <ProfileCard desc="executivesCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 임원</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="executivesCard">
+        <ProfileCard desc="executivesCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 임원</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="executivesCard">
+        <ProfileCard desc="executivesCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 임원</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{ marginBottom: "350px" }} label="executivesCard">
+        <ProfileCard style={{ marginBottom: "350px" }} desc="executivesCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 임원</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="executivesCard">
+        <ProfileCard desc="executivesCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 임원</ProfileLabel>
@@ -106,42 +105,42 @@ function AboutPage() {
           height: "150vh",
         }}
       >
-        <ProfileCard label="choirCard">
+        <ProfileCard desc="choirCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 찬양단</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="choirCard">
+        <ProfileCard desc="choirCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 찬양단</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="choirCard">
+        <ProfileCard desc="choirCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 찬양단</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard style={{ marginBottom: "350px" }} label="choirCard">
+        <ProfileCard style={{ marginBottom: "350px" }} desc="choirCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 찬양단</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="choirCard">
+        <ProfileCard desc="choirCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 찬양단</ProfileLabel>
           </ProfileContent>
           <Profile src="/images/userImg.jpg" alt="Profile" />
         </ProfileCard>
-        <ProfileCard label="choirCard">
+        <ProfileCard desc="choirCard">
           <ProfileContent>
             <ProfileName>OOO 청년</ProfileName>
             <ProfileLabel>청년부 찬양단</ProfileLabel>

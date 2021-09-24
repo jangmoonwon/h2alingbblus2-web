@@ -42,6 +42,7 @@ const Text = styled.text<TextProps>`
   color: #f5ebe9;
   margin: 0;
   padding: 0;
+  cursor: default;
 `;
 
 export { Container, Wrapper, Text };

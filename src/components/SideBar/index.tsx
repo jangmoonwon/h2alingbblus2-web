@@ -19,12 +19,12 @@ const SideBar = (props: SideBarProps) => {
   return (
     <Container>
       <SideBarLayout active={active}>
-        <Wrapper label="textLink">
-          <TextLink to={paths.about}>about</TextLink>
-          <TextLink to={paths.worship}>worship</TextLink>
-          <TextLink to={paths.photo}>photo</TextLink>
+        <Wrapper desc="textLink">
+          <TextLink to={paths.about}>소개</TextLink>
+          <TextLink to={paths.worship}>예배안내</TextLink>
+          <TextLink to={paths.photo}>사진첩</TextLink>
         </Wrapper>
-        <Wrapper label="snsLink">
+        <Wrapper desc="snsLink">
           <SnsLink href={"https://www.instagram.com/h2aling_bblus2/"}>
             <SnsLinkLogo src="/images/instagram.png" alt="instagram" />
           </SnsLink>

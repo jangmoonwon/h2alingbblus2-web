@@ -6,10 +6,7 @@ function SecondPage() {
   return (
     <Container>
       <NoticeContainer>
-     
-      
         <Carousel />
-       
       </NoticeContainer>
     </Container>
   );

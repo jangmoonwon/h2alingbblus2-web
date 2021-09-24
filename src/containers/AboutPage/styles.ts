@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type ProfileCardProps = {
-  label: string;
+  desc: string;
 };
 
 const CrimsonBox = styled.div`
@@ -57,7 +57,6 @@ const StyledBorder = styled.div`
 `;
 const Container = styled.div`
   width: 100vw;
-  height: auto;
   background-color: #f5ebe9;
   scroll-snap-type: y mandatory;
   overflow: auto;
@@ -81,6 +80,7 @@ const HeaderText = styled.div`
   font-size: 80px;
   font-family: "Cafe24Oneprettynight";
   color: #002526;
+  cursor: default;
 `;
 
 const ArticleText = styled.div`
@@ -91,6 +91,7 @@ const ArticleText = styled.div`
   font-size: 50px;
   font-family: "Cafe24Oneprettynight";
   color: #002526;
+  cursor: default;
 `;
 
 const ProfileWrapper = styled.div`
@@ -108,9 +109,9 @@ const ProfileCard = styled.div<ProfileCardProps>`
   height: 500px;
   border-radius: 23px;
   background-color: ${(props) => {
-    if (props.label === "pastorCard") return "#654173";
-    if (props.label === "executivesCard") return "#bf4b75";
-    if (props.label === "choirCard") return "#d98c8b";
+    if (props.desc === "pastorCard") return "#654173";
+    if (props.desc === "executivesCard") return "#bf4b75";
+    if (props.desc === "choirCard") return "#d98c8b";
     return "#c7c7c7";
   }};
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -135,10 +136,10 @@ const Profile = styled.img`
 `;
 
 const ScrollButton = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 12;
   right: 30px;
-  top: 507%;
+  top: 90%;
   width: 60px;
   height: 60px;
   font-size: 80px;
