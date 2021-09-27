@@ -1,49 +1,104 @@
 import styled from "styled-components";
 
-type ProfileCardProps = {
-  desc: string;
-};
-
-const CrimsonBox = styled.div`
-  position: absolute;
-  z-index: 10;
-  top: 100px;
-  left: 150px;
-  width: 300px;
-  height: 300px;
-  background-color: #c65847;
-  border-radius: 19% 81% 74% 26% / 22% 30% 70% 78%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
 `;
 
-const TurquoiseBox = styled.div`
+const Wrapper = styled.div`
+  position: relative;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 35px;
+  font-weight: 600;
+  background-color: #f5ebe9;
+`;
+
+const VerticalText = styled.h1`
+  position: absolute;
+  z-index: 11;
+  top: 17%;
+  left: 40%;
+  font-size: 84px;
+  font-weight: 300;
+  font-family: "Cafe24Oneprettynight";
+  color: #c65847;
+  writing-mode: vertical-lr;
+  cursor: default;
+`;
+
+const HorizontalText = styled.h1`
+  position: absolute;
+  z-index: 11;
+  top: 11%;
+  left: 50%;
+  font-size: 80px;
+  font-weight: 300;
+  font-family: "Cafe24Oneprettynight";
+  color: #002526;
+  writing-mode: horizontal-tb;
+  cursor: default;
+`;
+
+const PurpleBox = styled.div`
   position: absolute;
   z-index: 10;
-  bottom: 70px;
-  right: 250px;
+  top: 25%;
+  left: 7%;
+  width: 450px;
+  height: 450px;
+  background-color: #765e8d;
+  border-radius: 19% 81% 74% 26% / 22% 30% 70% 78%;
+  box-shadow: rgba(0, 87, 127, 0.25) 0px 50px 50px,
+    rgba(0, 87, 127, 0.72) 0px 12px 20px, rgba(0, 87, 127, 0.12) 0px 4px 6px,
+    rgba(0, 87, 127, 0.17) 0px 12px 13px, rgba(0, 87, 127, 0.09) 0px -3px 5px;
+`;
+
+const PinkBox = styled.div`
+  position: absolute;
+  z-index: 11;
+  bottom: 13%;
+  right: 13%;
   width: 250px;
   height: 250px;
-  background-color: #002526;
+  background-color: #ed717f;
   border-radius: 62% 38% 71% 29% / 35% 57% 43% 65%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(198, 116, 134, 0.25) 50px 30px 50px,
+    rgba(198, 116, 134, 0.72) 0px 12px 20px,
+    rgba(198, 116, 134, 0.12) 0px 4px 6px,
+    rgba(198, 116, 134, 0.17) 0px 12px 13px,
+    rgba(198, 116, 134, 0.09) 0px -3px 5px;
 `;
 
 const YellowBox = styled.div`
   position: absolute;
-  z-index: 9;
-  top: 90%;
-  left: 33%;
+  z-index: 11;
+  top: 5%;
+  right: 25%;
   width: 130px;
   height: 130px;
   background-color: #f8b73b;
-  transform: rotate(90deg);
-  border-radius: 63% 37% 72% 28% / 27% 58% 42% 73%;
-  box-shadow: rgba(177, 103, 113, 0.65) 3px 4px 10px,
-    rgba(214, 124, 136, 0.72) 10px 10px 12px;
+  border-radius: 82% 18% 33% 67% / 47% 22% 78% 53%;
+  box-shadow: rgba(237, 113, 127, 0.65) 3px 4px 10px,
+    rgba(237, 113, 127, 0.42) 10px 10px 12px;
+`;
+
+const TestBox = styled.div`
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  width: 740px;
+  height: 100vh;
+  border-radius: 15% 24% 0% 47% / 50% 0% 10% 50%;
+  background-color: #f5ad92;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 const StyledBorder = styled.div`
@@ -55,152 +110,31 @@ const StyledBorder = styled.div`
   border: 7.5px solid #f3c09f;
   border-radius: 3px;
 `;
-const Container = styled.div`
-  width: 100vw;
-  background-color: #f5ebe9;
-  scroll-snap-type: y mandatory;
-  overflow: auto;
-`;
 
-const TextWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 80vh;
-`;
-
-const HeaderText = styled.div`
+const ScrollBtn = styled.button`
   position: absolute;
-  z-index: 10;
-  top: 20%;
-  right: 30%;
-  font-size: 80px;
-  font-family: "Cafe24Oneprettynight";
-  color: #002526;
-  cursor: default;
-`;
-
-const ArticleText = styled.div`
-  position: absolute;
-  z-index: 11;
-  top: 95%;
-  left: 10%;
-  font-size: 50px;
-  font-family: "Cafe24Oneprettynight";
-  color: #002526;
-  cursor: default;
-`;
-
-const ProfileWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 120vh;
-  background-color: #b9b4a8;
-`;
-
-const ProfileCard = styled.div<ProfileCardProps>`
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 500px;
-  border-radius: 23px;
-  background-color: ${(props) => {
-    if (props.desc === "pastorCard") return "#654173";
-    if (props.desc === "executivesCard") return "#bf4b75";
-    if (props.desc === "choirCard") return "#d98c8b";
-    return "#c7c7c7";
-  }};
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-`;
-
-const ProfileContent = styled.div`
-  position: absolute;
-  z-index: 12;
-  width: 300px;
-  height: 430px;
-  background-color: #f5f5f5;
-  border-radius: 23px;
-`;
-
-const Profile = styled.img`
-  position: absolute;
-  z-index: 12;
-  width: 300px;
-  height: 300px;
-  border-radius: 23px;
-`;
-
-const ScrollButton = styled.div`
-  position: fixed;
-  z-index: 12;
-  right: 30px;
-  top: 90%;
-  width: 60px;
-  height: 60px;
-  font-size: 80px;
-  border-radius: 11px;
+  z-index: 1;
+  bottom: 5%;
+  width: 200px;
+  height: 45px;
+  background-color: transparent;
   border: transparent;
-  transition: 0.1s all ease-in;
+  font-size: 43px;
+  font-family: "Cafe24Oneprettynight";
+  font-weight: 300;
+  color: #003638;
   cursor: pointer;
-  &:hover {
-    background-color: rgba(97, 105, 105, 0.75);
-  }
-`;
-
-const ProfileName = styled.h1`
-  margin-top: 340px;
-  color: #002526;
-  text-align: center;
-  font-family: "Cafe24Oneprettynight";
-`;
-
-const ProfileLabel = styled.h1`
-  margin-top: 70px;
-  color: #f5ebe9;
-  text-align: center;
-  font-family: "Cafe24Oneprettynight";
-`;
-
-const ScrollImg = styled.img`
-  position: absolute;
-  z-index: 12;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-`;
-
-const ScrollText = styled.text`
-  position: absolute;
-  z-index: 12;
-  right: 12px;
-  bottom: 0;
-  font-size: 25px;
-  font-weight: 600;
-  font-family: "Cafe24Oneprettynight";
-  color: #f5ebe9;
 `;
 
 export {
   Container,
-  TextWrapper,
-  CrimsonBox,
-  TurquoiseBox,
+  Wrapper,
+  VerticalText,
+  HorizontalText,
+  PurpleBox,
+  PinkBox,
   YellowBox,
   StyledBorder,
-  HeaderText,
-  ArticleText,
-  ProfileWrapper,
-  ProfileCard,
-  ProfileContent,
-  Profile,
-  ScrollButton,
-  ProfileName,
-  ProfileLabel,
-  ScrollImg,
-  ScrollText,
+  TestBox,
+  ScrollBtn,
 };

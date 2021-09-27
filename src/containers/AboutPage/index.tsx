@@ -1,157 +1,59 @@
 import React, { useRef } from "react";
 import {
   Container,
-  TextWrapper,
-  CrimsonBox,
-  TurquoiseBox,
+  Wrapper,
+  VerticalText,
+  PurpleBox,
+  PinkBox,
   YellowBox,
-  StyledBorder,
-  HeaderText,
-  ArticleText,
-  ProfileWrapper,
-  ProfileCard,
-  Profile,
-  ProfileContent,
-  ScrollButton,
-  ProfileName,
-  ProfileLabel,
-  ScrollImg,
-  ScrollText,
+  HorizontalText,
+  TestBox,
+  ScrollBtn,
 } from "./styles";
 
 function AboutPage() {
   const buttonRef = useRef<any>();
+  const scrollToButtom = () => {
+    buttonRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const button2Ref = useRef<any>();
+  const scrollToButtom2 = () => {
+    button2Ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const button3Ref = useRef<any>();
   const scrollToTop = () => {
-    window.scrollTo({
-      behavior: "smooth",
-      top: buttonRef.current.offsetTop,
-    });
+    button3Ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <Container ref={buttonRef}>
-      <CrimsonBox />
-      <TurquoiseBox />
-      <YellowBox />
-      <StyledBorder />
-      <TextWrapper>
-        <HeaderText>
-          사랑스럽고, <br />
-          과즙미넘치는 <br />
-          유쾌하고,
+    <Container >
+      <Wrapper ref={button3Ref}>
+        <VerticalText>사과유자청</VerticalText>
+        <HorizontalText>
+          랑스럽고, <br />
+          즙미넘치는 <br />
+          쾌하고,
           <br />
-          자유로운
+          유로운
           <br />
-          청년부
-        </HeaderText>
-      </TextWrapper>
-      <ProfileWrapper>
-        <ArticleText>청년부 섬김이들을 소개합니다.</ArticleText>
-        <ProfileCard style={{ marginTop: 300 }} desc="pastorCard">
-          <ProfileContent>
-            <ProfileName>OOO 목사님</ProfileName>
-            <ProfileLabel>교육목사</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-      </ProfileWrapper>
-      <ProfileWrapper
-        style={{
-          gap: 100,
-          flexWrap: "wrap",
-          height: "170vh",
-        }}
-      >
-        <ProfileCard desc="executivesCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 임원</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="executivesCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 임원</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="executivesCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 임원</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard style={{ marginBottom: "350px" }} desc="executivesCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 임원</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="executivesCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 임원</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-      </ProfileWrapper>
-      <ProfileWrapper
-        style={{
-          gap: 100,
-          flexWrap: "wrap",
-          height: "150vh",
-        }}
-      >
-        <ProfileCard desc="choirCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 찬양단</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="choirCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 찬양단</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="choirCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 찬양단</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard style={{ marginBottom: "350px" }} desc="choirCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 찬양단</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="choirCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 찬양단</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ProfileCard desc="choirCard">
-          <ProfileContent>
-            <ProfileName>OOO 청년</ProfileName>
-            <ProfileLabel>청년부 찬양단</ProfileLabel>
-          </ProfileContent>
-          <Profile src="/images/userImg.jpg" alt="Profile" />
-        </ProfileCard>
-        <ScrollButton onClick={scrollToTop}>
-          <ScrollImg src="/images/scrollTop.png" alt="scrollbtn" />
-          <ScrollText>TOP</ScrollText>
-        </ScrollButton>
-      </ProfileWrapper>
+          년부
+        </HorizontalText>
+        <PurpleBox />
+        <PinkBox />
+        <YellowBox />
+        <TestBox />
+        <ScrollBtn onClick={scrollToButtom}>밑으로 가기</ScrollBtn>
+      </Wrapper>
+      <Wrapper ref={buttonRef}>
+        <h2>간단한 예배 소개 글</h2>
+        <ScrollBtn onClick={scrollToButtom2}>밑으로 가기</ScrollBtn>
+      </Wrapper>
+      <Wrapper style={{ backgroundColor: "pink" }} ref={button2Ref}>
+        <h2>pages 3</h2>
+        <ScrollBtn onClick={scrollToTop}>맨 위로</ScrollBtn>
+      </Wrapper>
     </Container>
   );
 }
