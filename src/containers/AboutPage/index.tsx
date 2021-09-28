@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Scroll from "./Scroll";
 import {
   Container,
   Wrapper,
@@ -12,24 +13,24 @@ import {
 } from "./styles";
 
 function AboutPage() {
-  const buttonRef = useRef<any>();
+  const SecondPageRef = useRef<any>();
   const scrollToButtom = () => {
-    buttonRef.current.scrollIntoView({ behavior: "smooth" });
+    SecondPageRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const button2Ref = useRef<any>();
+  const ThirdPageRef = useRef<any>();
   const scrollToButtom2 = () => {
-    button2Ref.current.scrollIntoView({ behavior: "smooth" });
+    ThirdPageRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const button3Ref = useRef<any>();
+  const TopRef = useRef<any>();
   const scrollToTop = () => {
-    button3Ref.current.scrollIntoView({ behavior: "smooth" });
+    TopRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <Container >
-      <Wrapper ref={button3Ref}>
+      <Wrapper ref={TopRef}>
         <VerticalText>사과유자청</VerticalText>
         <HorizontalText>
           랑스럽고, <br />
@@ -46,12 +47,12 @@ function AboutPage() {
         <TestBox />
         <ScrollBtn onClick={scrollToButtom}>밑으로 가기</ScrollBtn>
       </Wrapper>
-      <Wrapper ref={buttonRef}>
+      <Wrapper ref={SecondPageRef}>
         <h2>간단한 예배 소개 글</h2>
         <ScrollBtn onClick={scrollToButtom2}>밑으로 가기</ScrollBtn>
       </Wrapper>
-      <Wrapper style={{ backgroundColor: "pink" }} ref={button2Ref}>
-        <h2>pages 3</h2>
+      <Wrapper ref={ThirdPageRef}>
+        <Scroll />
         <ScrollBtn onClick={scrollToTop}>맨 위로</ScrollBtn>
       </Wrapper>
     </Container>
