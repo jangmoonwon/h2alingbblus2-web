@@ -115,7 +115,7 @@ const ScrollBtn = styled.button`
   position: absolute;
   z-index: 1;
   bottom: 5%;
-  width: 200px;
+  width: 300px;
   height: 45px;
   background-color: transparent;
   border: transparent;

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Scroll from "./Scroll";
+import SlidePage from "./SlidePage";
 import {
   Container,
   Wrapper,
@@ -28,8 +28,9 @@ function AboutPage() {
     TopRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+
   return (
-    <Container >
+    <Container>
       <Wrapper ref={TopRef}>
         <VerticalText>사과유자청</VerticalText>
         <HorizontalText>
@@ -52,8 +53,8 @@ function AboutPage() {
         <ScrollBtn onClick={scrollToButtom2}>밑으로 가기</ScrollBtn>
       </Wrapper>
       <Wrapper ref={ThirdPageRef}>
-        <Scroll />
-        <ScrollBtn onClick={scrollToTop}>맨 위로</ScrollBtn>
+        <SlidePage />
+        <ScrollBtn onClick={scrollToTop}>맨 위로 가기</ScrollBtn>
       </Wrapper>
     </Container>
   );
