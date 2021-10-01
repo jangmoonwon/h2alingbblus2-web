@@ -1,55 +1,44 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
+
+type ArrowProps = {
+  isLeft: boolean;
+};
 
 type ProfileCardProps = {
   desc: string;
 };
 
-type ArrowProps = {
-    isLeft: boolean;
-};
-  
-type ItemBoxProps = {
-    idx: number;
-};
+const TOTAL_SLIDES = 3;
 
+function SlidePage() {
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const slideRef = useRef<any>(null);
 
-function Scroll() {
-  const [translateValue, setTranslateValue] = useState<number>(0);
-
-  const handlePrevClick = useCallback((): void => {
-    if (translateValue <= 0) {
-      // state 업데이트 전, 해당 변수의 값이 0이라면
-      
-      setTranslateValue(ItemBox.idx - 1);
-      // length의 -1로 지정하여 가장 마지막으로 이동한다.
-  
-      return;
+  const nextClick = () => {
+    if (currentSlide >= TOTAL_SLIDES) {
+      setCurrentSlide(0);
+    } else {
+      setCurrentSlide(currentSlide + 1);
     }
-  
-    setTranslateValue(translateValue - 1);
-    // 인덱스 감소
-  }, [translateValue]);
-  
-  // 오른쪽 화살표 클릭
-  const handleNextClick = useCallback((): void => {
-    if (translateValue + 1 === ItemBox.idx) {
-      // +1 했을 때, 배열의 인덱스를 벗어난다면
-      
-      setTranslateValue(0);
-      // 0으로 설정하여 가장 첫번째로 이동
-      
-      return;
+  };
+  const prevClick = () => {
+    if (currentSlide === 0) {
+      setCurrentSlide(TOTAL_SLIDES);
+    } else {
+      setCurrentSlide(currentSlide - 1);
     }
-  
-    setTranslateValue(translateValue + 1);
-    // 인덱스 증가
-  }, [translateValue]);
+  };
+
+  useEffect(() => {
+    slideRef.current.style.transition = "all 0.75s ease-in-out";
+    slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
+  }, [currentSlide]);
 
   return (
     <Container>
-      <Wrapper>
-        <ItemBox idx={1} >
+      <SlideContainer ref={slideRef}>
+        <Content>
           <ProfileCard desc="pastorCard">
             <ProfileContent>
               <ProfileName>OOO 목사님</ProfileName>
@@ -71,8 +60,8 @@ function Scroll() {
             </ProfileContent>
             <Profile src="/images/userImg.jpg" alt="Profile" />
           </ProfileCard>
-        </ItemBox>
-        <ItemBox idx={2}>
+        </Content>
+        <Content>
           <ProfileCard desc="executivesCard">
             <ProfileContent>
               <ProfileName>OOO 청년</ProfileName>
@@ -94,8 +83,8 @@ function Scroll() {
             </ProfileContent>
             <Profile src="/images/userImg.jpg" alt="Profile" />
           </ProfileCard>
-        </ItemBox>
-        <ItemBox idx={3}>
+        </Content>
+        <Content>
           <ProfileCard desc="choirCard">
             <ProfileContent>
               <ProfileName>OOO 청년</ProfileName>
@@ -117,8 +106,8 @@ function Scroll() {
             </ProfileContent>
             <Profile src="/images/userImg.jpg" alt="Profile" />
           </ProfileCard>
-        </ItemBox>
-        <ItemBox idx={4}>
+        </Content>
+        <Content>
           <ProfileCard desc="choirCard">
             <ProfileContent>
               <ProfileName>OOO 청년</ProfileName>
@@ -140,60 +129,78 @@ function Scroll() {
             </ProfileContent>
             <Profile src="/images/userImg.jpg" alt="Profile" />
           </ProfileCard>
-        </ItemBox>
-        <Arrow isLeft={true} onClick={handlePrevClick}>
-          ◀︎
-        </Arrow>
-        <Arrow isLeft={false} onClick={handleNextClick}>
-          ▶︎
-        </Arrow>
-      </Wrapper>
+        </Content>
+      </SlideContainer>
+      <Arrow isLeft={true} onClick={prevClick}>
+        <Img src="/images/leftArrow.png" alt="prevClick" />
+      </Arrow>
+      <Arrow isLeft={false} onClick={nextClick}>
+      <Img src="/images/rightArrow.png" alt="nextClick" />
+      </Arrow>
     </Container>
   );
 }
 
-export default Scroll;
+export default SlidePage;
 
 const Container = styled.div`
-  background: transparent;
-  display: block;
-  overflow: hidden;
-  width: 100vw;
+  width: 90vw;
   height: 70vh;
-  margin: 0 auto;
-  background-color: rgba(245, 235, 233, 0.2);
-  /* border: 3px solid #f5ebe9; */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  width: auto;
-  height: 70vh;
+  background-color: rgba(235, 235, 235, 1);
+  border-radius: 25px;
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 10px 60px -30px;
+  overflow: auto;
   overflow-x: scroll;
-  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  background-color: transparent;
-`;
-
-const ItemBox = styled.div<ItemBoxProps>`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const SlideContainer = styled.div`
+  width: 90vw;
+  height: 70vh;
+  display: flex;
+`;
+
+const Arrow = styled.div<ArrowProps>`
+  background-color: transparent;
+  border-radius: 20%;
+  position: absolute;
+  z-index: 99;
+  top: 45%;
+  ${(props) => (props.isLeft ? "left: 7%" : "right: 7%")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  color: #131313;
+  cursor: pointer;
+`;
+
+const Img = styled.img`
+  width: 50px;
+  height: 50px;
+`;
+
+const Content = styled.div`
+scroll-snap-align: center;
+  width: 90vw;
+  height: 70vh;
+  display: flex;
   flex-shrink: 0;
-  scroll-snap-align: center;
-  width: 100vw;
-  height: 100%;
-  gap: 50px;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ProfileCard = styled.div<ProfileCardProps>`
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 500px;
+  width: 270px;
+  height: 450px;
   border-radius: 23px;
   background-color: ${(props) => {
     if (props.desc === "pastorCard") return "#654173";
@@ -208,8 +215,8 @@ const ProfileCard = styled.div<ProfileCardProps>`
 const ProfileContent = styled.div`
   position: absolute;
   z-index: 12;
-  width: 300px;
-  height: 430px;
+  width: 270px;
+  height: 390px;
   background-color: #f5f5f5;
   border-radius: 23px;
 `;
@@ -217,13 +224,13 @@ const ProfileContent = styled.div`
 const Profile = styled.img`
   position: absolute;
   z-index: 12;
-  width: 300px;
-  height: 300px;
+  width: 270px;
+  height: 270px;
   border-radius: 23px;
 `;
 
 const ProfileName = styled.h1`
-  margin-top: 340px;
+  margin-top: 310px;
   color: #002526;
   text-align: center;
   font-size: 30px;
@@ -231,30 +238,9 @@ const ProfileName = styled.h1`
 `;
 
 const ProfileLabel = styled.h1`
-  margin-top: 75px;
+  margin-top: 63px;
   color: #f5ebe9;
   text-align: center;
   font-size: 30px;
   font-family: "Cafe24Oneprettynight";
-`;
-
-const Arrow = styled.div<ArrowProps>`
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  border-radius: 20%;
-  position: absolute;
-  z-index: 99;
-  top: 50%;
-  ${(props) => (props.isLeft ? "left: 5px" : "right: 5px")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
-  color: #131313;
-  cursor: pointer;
-  transition: 0.175s all ease-in;
-  &:hover {
-    background-color: rgba(204, 198, 198, 0.75);
-  }
 `;

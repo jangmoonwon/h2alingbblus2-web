@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import SlidePage from "./SlidePage";
+import SlidePage from "./Profile";
 import {
   Container,
   Wrapper,
@@ -52,7 +52,7 @@ function AboutPage() {
         <h2>간단한 예배 소개 글</h2>
         <ScrollBtn onClick={scrollToButtom2}>밑으로 가기</ScrollBtn>
       </Wrapper>
-      <Wrapper ref={ThirdPageRef}>
+      <Wrapper ref={ThirdPageRef} style={{backgroundColor: "#d9d9d9"}}>
         <SlidePage />
         <ScrollBtn onClick={scrollToTop}>맨 위로 가기</ScrollBtn>
       </Wrapper>
