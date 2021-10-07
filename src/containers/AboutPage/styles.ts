@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, {css, keyframes} from "styled-components";
+
+type ArrowProps = {
+  active: any;
+};
 
 const Container = styled.div`
   width: 100vw;
@@ -89,7 +93,7 @@ const YellowBox = styled.div`
     rgba(237, 113, 127, 0.42) 10px 10px 12px;
 `;
 
-const TestBox = styled.div`
+const BgBox = styled.div`
   position: absolute;
   z-index: 10;
   top: 0;
@@ -126,6 +130,33 @@ const ScrollBtn = styled.button`
   cursor: pointer;
 `;
 
+const DownArrow = styled.img<ArrowProps>`
+  position: absolute;
+  bottom: 15px;
+  z-index: 13;
+  width: 60px;
+  height: 60px;
+  ${(props) => {
+  if (props.active) {
+    return css`
+      animation: ${ArrowEffect} 1.45s infinite;
+    `;
+  }
+  }}
+`;
+
+const ArrowEffect = keyframes`
+  from {
+    opacity: 0;
+    margin-bottom: 0px
+  }
+
+  to {
+    opacity: 1;
+    margin-bottom: 7px
+  }
+`;
+
 export {
   Container,
   Wrapper,
@@ -135,6 +166,7 @@ export {
   PinkBox,
   YellowBox,
   StyledBorder,
-  TestBox,
+  BgBox,
   ScrollBtn,
+  DownArrow,
 };

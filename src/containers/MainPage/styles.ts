@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 type TextProps = {
   title: string;
+};
+
+type ArrowProps = {
+  active: any;
 };
 
 const Container = styled.div`
@@ -20,6 +24,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -29,6 +34,13 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.text<TextProps>`
+  position: absolute;
+  top: ${(props) => {
+    if (props.title === "main") return "45%";
+    if (props.title === "sub") return "40%";
+    return "none";
+  }};
+
   font-size: ${(props) => {
     if (props.title === "main") return "100px";
     if (props.title === "sub") return "30px";
@@ -45,4 +57,30 @@ const Text = styled.text<TextProps>`
   cursor: default;
 `;
 
-export { Container, Wrapper, Text };
+const DownArrow = styled.img<ArrowProps>`
+  position: absolute;
+  bottom: 5px;
+  width: 60px;
+  height: 60px;
+  ${(props) => {
+    if (props.active) {
+      return css`
+        animation: ${ArrowEffect} 1.45s infinite;
+      `;
+    }
+  }}
+`;
+
+const ArrowEffect = keyframes`
+  from {
+  opacity: 0;
+  margin-bottom: 0px;
+}
+
+to {
+  opacity: 1;
+  margin-bottom: 7px;
+}
+`;
+
+export { Container, Wrapper, Text, DownArrow };

@@ -8,26 +8,16 @@ import {
   PinkBox,
   YellowBox,
   HorizontalText,
-  TestBox,
+  BgBox,
   ScrollBtn,
+  DownArrow,
 } from "./styles";
 
 function AboutPage() {
-  const SecondPageRef = useRef<any>();
-  const scrollToButtom = () => {
-    SecondPageRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const ThirdPageRef = useRef<any>();
-  const scrollToButtom2 = () => {
-    ThirdPageRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
   const TopRef = useRef<any>();
   const scrollToTop = () => {
     TopRef.current.scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <Container>
@@ -45,14 +35,22 @@ function AboutPage() {
         <PurpleBox />
         <PinkBox />
         <YellowBox />
-        <TestBox />
-        <ScrollBtn onClick={scrollToButtom}>밑으로 가기</ScrollBtn>
+        <BgBox />
+        <DownArrow
+          src="/images/GreenDownArrow.png"
+          alt="GreenDownArrow"
+          active
+        />
       </Wrapper>
-      <Wrapper ref={SecondPageRef}>
+      <Wrapper >
         <h2>간단한 예배 소개 글</h2>
-        <ScrollBtn onClick={scrollToButtom2}>밑으로 가기</ScrollBtn>
+        <DownArrow
+          src="/images/GreenDownArrow.png"
+          alt="GreenDownArrow"
+          active
+        />
       </Wrapper>
-      <Wrapper ref={ThirdPageRef} style={{backgroundColor: "#d9d9d9"}}>
+      <Wrapper style={{ backgroundColor: "#d9d9d9" }}>
         <SlidePage />
         <ScrollBtn onClick={scrollToTop}>맨 위로 가기</ScrollBtn>
       </Wrapper>
