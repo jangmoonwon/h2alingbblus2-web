@@ -82,18 +82,30 @@ const TextLink = styled(NavLink)`
   text-decoration: none;
   color: #003638;
   width: 17vw;
-  height: 10vh;
+  height: 11vh;
   &:hover {
     color: #00a5ab;
+    background-color: #d6d4d4;
+    border-radius: 15px;
   }
   &:active {
     color: #00858a;
   }
   &.active {
     color: #00a5ab;
-    background-color: rgba(212, 195, 195, 0.35);
-    border-radius: 8px;
+    border-radius: 15px;
   }
+`;
+
+const CloseButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 17vw;
+  height: 11vh;
+  background-color: transparent;
+  border: transparent;
 `;
 
 const SnsLink = styled.a``;
@@ -115,4 +127,12 @@ to {
 }
 `;
 
-export { Container, SideBarLayout, Wrapper, TextLink, SnsLink, SnsLinkLogo };
+export {
+  Container,
+  SideBarLayout,
+  Wrapper,
+  TextLink,
+  CloseButton,
+  SnsLink,
+  SnsLinkLogo,
+};

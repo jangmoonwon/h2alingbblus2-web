@@ -22,7 +22,7 @@ function Header() {
         </Link>
       </Content>
       <Content>
-        {sideBarOpen && <SideBar active />}
+        {sideBarOpen && <SideBar active close />}
         <SideBarBtn onClick={ClickSideBar} isOpen={sideBarOpen}>
           <SideBarLogo src="/images/plus.png" alt="sideBarMenu" />
         </SideBarBtn>

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import paths from "../../routes/paths.json";
 import {
   Container,
   SideBarLayout,
   TextLink,
+  CloseButton,
   Wrapper,
   SnsLink,
   SnsLinkLogo,
@@ -11,18 +12,34 @@ import {
 
 type SideBarProps = {
   active: any;
+  close: any;
 };
 
 const SideBar = (props: SideBarProps) => {
-  const { active } = props;
+  const { active, close } = props;
+
+  const [linkClose, setLinkClose] = useState(false);
+  const handleClose = () => setLinkClose(!linkClose);
 
   return (
     <Container>
       <SideBarLayout active={active}>
         <Wrapper desc="textLink">
-          <TextLink to={paths.about}>소개</TextLink>
-          <TextLink to={paths.worship}>예배안내</TextLink>
-          <TextLink to={paths.photo}>사진첩</TextLink>
+          <CloseButton onClick={close}>
+            <TextLink to={paths.about} onClick={handleClose}>
+              소개
+            </TextLink>
+          </CloseButton>
+          <CloseButton onClick={close}>
+            <TextLink to={paths.worship} onClick={handleClose}>
+              예배안내
+            </TextLink>
+          </CloseButton>
+          <CloseButton onClick={close}>
+            <TextLink to={paths.photo} onClick={handleClose}>
+              사진첩
+            </TextLink>
+          </CloseButton>
         </Wrapper>
         <Wrapper desc="snsLink">
           <SnsLink href={"https://www.instagram.com/h2aling_bblus2/"}>
