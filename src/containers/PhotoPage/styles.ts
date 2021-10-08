@@ -8,6 +8,10 @@ type TextProps = {
   name: string;
 };
 
+type ImgProps = {
+  isLeft: boolean;
+};
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -23,16 +27,18 @@ const PhotoBox = styled.div<PhotoBoxProps>`
   margin: 0 auto;
   background-image: url("/images/colorPhotoTree.jpg");
   object-fit: contain;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+  border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%;
+  box-shadow: rgba(184, 156, 55, 0.65) 0px 40px 57px,
+    rgba(184, 156, 55, 0.32) 0px -12px 37px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(184, 156, 55, 0.37) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  overflow: hidden;
   ${(props) => {
     if (props.active) {
       return css`
-        animation: ${PhotoBoxEffect} 10s infinite;
+        animation: ${PhotoBoxEffect} 6.75s infinite;
       `;
     }
-  }};
-  overflow: hidden;
+  }}
 `;
 
 const Wrapper = styled.div`
@@ -43,12 +49,14 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #d9cfc1;
+  background-color: #8f948f;
+  box-shadow: rgba(113, 117, 113, 0.8) 45px 30px 100px 45px inset,
+    rgba(113, 117, 113, 0.82) 0px 18px 36px -18px inset;
 `;
 
 const Text = styled.h1<TextProps>`
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   top: ${(props) => {
     if (props.name === "desc1") return "23%";
     if (props.name === "desc2") return "28%";
@@ -84,21 +92,45 @@ const ScrollBtn = styled.button`
   cursor: pointer;
 `;
 
+const Img = styled.img<ImgProps>`
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  ${(props) => (props.isLeft ? "left: 3%" : "right: 3%")};
+  transform: ${(props) => {
+    if (props.isLeft === false) return "scaleX(-1)";
+    else return "none";
+  }};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const AlbumCard = styled.div`
+  background-color: #f0f0f0;
+  width: 300px;
+  height: 500px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 35px -10px,
+    rgba(0, 0, 0, 0.7) 0px 18px 30px -8px;
+`;
+
 const PhotoBoxEffect = keyframes`
    0% {
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+      border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%;
+      
     }
-    25% { 
-      border-radius: 30% 70% 37% 63% / 60% 30% 70% 40% ;
+    25% {
+      border-radius: 67% 33% 50% 50% / 45% 32% 68% 55%;
     }
     50% {
-      border-radius: 76% 24% 41% 59% / 40% 30% 70% 60% ;
-      box-shadow: -10px -5px 50px rgba(0,0,0,0.2);
+      border-radius: 28% 72% 67% 33% / 40% 56% 44% 60%;
+      
     }
     75% {
-      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+      border-radius: 67% 33% 65% 35% / 35% 60% 40% 65%;
     }
 `;
 
-export { Container, PhotoBox, Text, Wrapper, ScrollBtn };
+export { Container, PhotoBox, Text, Wrapper, ScrollBtn, Img, AlbumCard };
