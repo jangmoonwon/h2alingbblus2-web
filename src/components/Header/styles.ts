@@ -47,7 +47,7 @@ const SideBarBtn = styled.button<SideBarBtnProps>`
   ${(props) => {
     if (props.isOpen === true) {
       return css`
-        background: #962D2D;
+        background: #962d2d;
         &:hover {
           background: #ba3a3a;
         }
@@ -75,4 +75,5 @@ const SideBarLogo = styled.img`
   height: 35px;
 `;
 
-export { Container, Content, MainLogo, SideBarLogo, SideBarBtn, MainWrapper };
+
+export { Container, Content, MainLogo, SideBarLogo,  SideBarBtn, MainWrapper };
