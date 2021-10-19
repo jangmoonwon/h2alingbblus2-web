@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type TextProps = {
+  name: string;
+};
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -7,51 +11,69 @@ const Container = styled.div`
   scroll-snap-type: y mandatory;
 `;
 
-const Wrapper = styled.div`
+const ScrollWrapper = styled.div`
   position: absolute;
-  scroll-snap-align: center;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-size: 35px;
-  font-weight: 600;
+  width: auto;
+  height: auto;
 `;
 
-const Text = styled.text`
-text-align: center;
-font-family: "NanumSquareExtraBold";
-font-weight: 900;
-font-size: 50px;
+const Text = styled.text<TextProps>`
+  text-align: center;
+  font-family: "NanumSquareExtraBold";
+  font-weight: ${(props) => {
+    if (props.name === "h1Tag") return "900";
+    if (props.name === "h2Tag") return "600";
+    if (props.name === "pTag") return "300";
+    return 600;
+  }};
+
+  font-size: ${(props) => {
+    if (props.name === "h1Tag") return "100px";
+    if (props.name === "h2Tag") return "27px";
+    if (props.name === "pTag") return "30px";
+    return "40px";
+  }};
+  /* color: #333333; */
+  color: ${(props) => {
+    if (props.name === "h1Tag" || props.name === "h1Tag" ) return "#333333";
+    if (props.name === "pTag") return "#848484";
+    return "#333333";
+  }};
 `;
 
 const Hr = styled.hr`
-width: 47px;
-height: 3px;
-background-color: black;
-border: transparent;
+  width: 50px;
+  height: 3px;
+  background-color: #333333;
+  border: transparent;
+  margin-bottom: 25px;
 `;
 
 const Box = styled.div`
-width: 100vw;
-height: 100vh;
-position: relative;
-z-index: 3;
-background-color: blue;
-top: 100%;
-overflow: auto;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
 `;
 
 const Box2 = styled.div`
-width: 100vw;
-height: 100vh;
-position: relative;
-z-index: 5;
-background-color: black;
-opacity: 0.67;
-top: 100%;
-overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+  background-color: whitesmoke;
+  opacity: 1;
+  top: 100%;
+  overflow: auto;
 `;
 
 const ErrorText = styled.text`
@@ -80,5 +102,25 @@ const ScrollBtn = styled.button`
   cursor: pointer;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+  font-weight: 600;
+  color: #333333;
+  &:hover {
+    color: #adacac;
+    transition: 0.125s all ease-in;
+  }
+`;
 
-export { Container, Wrapper, Map, ErrorText, Box, Box2, ScrollBtn, Text, Hr };
+export {
+  Container,
+  ScrollWrapper,
+  Map,
+  ErrorText,
+  Box,
+  Box2,
+  ScrollBtn,
+  Text,
+  Hr,
+  Link,
+};

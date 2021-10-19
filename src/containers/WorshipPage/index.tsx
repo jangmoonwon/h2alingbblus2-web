@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
-  Wrapper,
-  Map,
-  ErrorText,
+  ScrollWrapper,
   Box,
   Box2,
-  ScrollBtn,
+  Map,
+  ErrorText,
   Text,
   Hr,
+  Link,
 } from "./styles";
 
 declare global {
@@ -21,11 +21,6 @@ const { kakao } = window;
 
 function Worship() {
   const [error, setError] = useState(false);
-
-  const TopRef = useRef<any>();
-  const scrollToTop = () => {
-    TopRef.current.scrollIntoView({ behavior: "smooth" });
-  };
 
   useEffect(() => {
     try {
@@ -65,23 +60,32 @@ function Worship() {
 
   return (
     <Container>
-      <Wrapper>
-        <Text>WORSHIP</Text>
-        <Hr />
-        <ScrollBtn onClick={scrollToTop}>지도보기</ScrollBtn>
-      </Wrapper>
-      <Box>
-        <h1>1</h1>
-      </Box>
-      <Box2 ref={TopRef}>
-      <Map id="kakaomap">
-          {error ? (
-            <ErrorText>
-              일시적인 오류로 인해 지도 확인이 불가능합니다.
-            </ErrorText>
-          ) : undefined}
-        </Map>
-      </Box2>
+      <ScrollWrapper>
+        <Box>
+          <Text name="h1Tag">WORSHIP</Text>
+          <Hr />
+          <Text name="h2Tag" style={{marginBottom: "30px"}}>강화중앙교회 청년부 토요예배</Text>
+
+          <Text name="pTag">
+            강화중앙교회 청년부 토요예배는 매주 토요일 오후 6시, <br />
+            인천광역시 강화군 강화읍 신문리에 위치한{" "}
+            <Link href="http://www.gcmch.org/kjmch/index_tong.asp">
+              강화중앙교회
+            </Link>
+            에서 예배드리고 있습니다.
+            <br />
+            .<br />
+
+          </Text>
+        </Box>
+        <Box2>
+          <Map id="kakaomap">
+            {error ? (
+              <ErrorText>일시적인 오류로 지도를 올 수 없습니다.</ErrorText>
+            ) : undefined}
+          </Map>
+        </Box2>
+      </ScrollWrapper>
     </Container>
   );
 }
