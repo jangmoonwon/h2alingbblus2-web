@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import {
   Container,
   ScrollWrapper,
-  Box,
-  Box2,
   Map,
   ErrorText,
   Text,
   Hr,
   Link,
+  BibleVerse,
 } from "./styles";
 
 declare global {
@@ -61,30 +60,52 @@ function Worship() {
   return (
     <Container>
       <ScrollWrapper>
-        <Box>
-          <Text name="h1Tag">WORSHIP</Text>
-          <Hr />
-          <Text name="h2Tag" style={{marginBottom: "30px"}}>강화중앙교회 청년부 토요예배</Text>
-
-          <Text name="pTag">
-            강화중앙교회 청년부 토요예배는 매주 토요일 오후 6시, <br />
-            인천광역시 강화군 강화읍 신문리에 위치한{" "}
-            <Link href="http://www.gcmch.org/kjmch/index_tong.asp">
-              강화중앙교회
-            </Link>
-            에서 예배드리고 있습니다.
-            <br />
-            .<br />
-
-          </Text>
-        </Box>
-        <Box2>
-          <Map id="kakaomap">
-            {error ? (
-              <ErrorText>일시적인 오류로 지도를 올 수 없습니다.</ErrorText>
-            ) : undefined}
-          </Map>
-        </Box2>
+        <Text name="h1Tag">WORSHIP</Text>
+        <Hr />
+        <Text name="h2Tag">강화중앙교회 청년부 토요예배</Text>
+        <br />
+        <Text name="pTag">
+          강화중앙교회 청년부 토요예배는 매주 토요일 오후 6시, <br />
+          인천광역시 강화군 강화읍 신문리에 위치한{" "}
+          <Link href="http://www.gcmch.org/kjmch/index_tong.asp">
+            강화중앙교회
+          </Link>
+          에서 예배드리고 있습니다.
+          <br />
+          청년부예배는{" "}
+          <Link href="https://www.youtube.com/channel/UCz3IrmZSylgR8i5uOQi4eaw">
+            YouTube
+          </Link>
+          라이브 송출, 대면예배로 동시진행되고 있습니다.
+          <br />
+          <br />
+          <br />
+        </Text>
+        <BibleVerse>
+          오직 여호와를 앙망하는 자는 새 힘을 얻으리니 독수리가 날개치며 올라감
+          같을 것이요
+          <br />
+          달음박질하여도 곤비하지 아니하겠고 걸어가도 피곤하지 아니하리로다.
+          <br />
+          <br />
+          이사야 40:31
+        </BibleVerse>
+        <br />
+        <br />
+        <br />
+        <Text name="pTag">
+          찬양과 예배를 통해 힘들고 지쳤던 마음들을 위로받으며,
+          <br />
+          독수리가 날개치며 올라감 같이 새 힘을 얻으시는 건 어떠신가요?
+        </Text>
+        <Text name="h1Tag">LOCATION</Text>
+        <Hr />
+        <Text name="h2Tag">강화중앙교회 위치 안내</Text>
+        <Map id="kakaomap">
+          {error ? (
+            <ErrorText>일시적인 오류로 지도를 올 수 없습니다.</ErrorText>
+          ) : undefined}
+        </Map>
       </ScrollWrapper>
     </Container>
   );

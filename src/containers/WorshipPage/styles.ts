@@ -12,13 +12,13 @@ const Container = styled.div`
 `;
 
 const ScrollWrapper = styled.div`
-  position: absolute;
+
   overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 100vw;
   height: auto;
 `;
 
@@ -40,10 +40,20 @@ const Text = styled.text<TextProps>`
   }};
   /* color: #333333; */
   color: ${(props) => {
-    if (props.name === "h1Tag" || props.name === "h1Tag" ) return "#333333";
-    if (props.name === "pTag") return "#848484";
+    if (props.name === "h1Tag" || props.name === "h1Tag") return "#333333";
+    if (props.name === "pTag") return "#6b6b6b";
     return "#333333";
-  }};
+}};
+  margin-top: ${(props) => (props.name === "h1Tag" ? "120px" : "none")};
+  margin-bottom: ${(props) => (props.name === "h2Tag" ? "50px" : "none")};
+`;
+
+const BibleVerse = styled.text`
+  text-align: center;
+  font-family: "Cafe24Oneprettynight";
+  font-weight: 600;
+  font-size: 35px;
+  color: #0557a5;
 `;
 
 const Hr = styled.hr`
@@ -54,28 +64,6 @@ const Hr = styled.hr`
   margin-bottom: 25px;
 `;
 
-const Box = styled.div`
-  scroll-snap-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: auto;
-`;
-
-const Box2 = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  z-index: 5;
-  background-color: whitesmoke;
-  opacity: 1;
-  top: 100%;
-  overflow: auto;
-`;
-
 const ErrorText = styled.text`
   font-size: 50px;
   text-align: center;
@@ -83,7 +71,7 @@ const ErrorText = styled.text`
 `;
 
 const Map = styled.div`
-  width: 80vw;
+  width: 100vw;
   height: 70vh;
 `;
 
@@ -117,10 +105,9 @@ export {
   ScrollWrapper,
   Map,
   ErrorText,
-  Box,
-  Box2,
   ScrollBtn,
   Text,
   Hr,
   Link,
+  BibleVerse,
 };
