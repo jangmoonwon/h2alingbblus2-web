@@ -57,11 +57,13 @@ const Text = styled.text<TextProps>`
   cursor: default;
 `;
 
+
 const DownArrow = styled.img<ArrowProps>`
   position: absolute;
   bottom: 5px;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
   ${(props) => {
     if (props.active) {
       return css`
@@ -69,6 +71,21 @@ const DownArrow = styled.img<ArrowProps>`
       `;
     }
   }}
+`;
+
+const ScrollBtn = styled.button`
+  position: absolute;
+  z-index: 1;
+  bottom: 3%;
+  width: 300px;
+  height: 45px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 43px;
+  font-family: "Cafe24Oneprettynight";
+  font-weight: 300;
+  color: #003638;
+  cursor: pointer;
 `;
 
 const ArrowEffect = keyframes`
@@ -83,4 +100,4 @@ to {
 }
 `;
 
-export { Container, Wrapper, Text, DownArrow };
+export { Container, Wrapper, Text, DownArrow, ScrollBtn };

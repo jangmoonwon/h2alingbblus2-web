@@ -9,7 +9,7 @@ type ProfileCardProps = {
   desc: string;
 };
 
-const TOTAL_SLIDES = 3;
+const TOTAL_SLIDES = 2;
 
 function SlidePage() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);

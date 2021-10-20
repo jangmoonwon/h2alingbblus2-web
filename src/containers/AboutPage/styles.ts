@@ -134,8 +134,9 @@ const DownArrow = styled.img<ArrowProps>`
   position: absolute;
   bottom: 15px;
   z-index: 13;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
   ${(props) => {
   if (props.active) {
     return css`

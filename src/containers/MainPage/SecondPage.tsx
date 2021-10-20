@@ -20,12 +20,12 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #262526;
+  background-color: #f5ebe9;
 `;
 
 const NoticeContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 70vh;
-  background-color: #b8a89a;
+
 `;
