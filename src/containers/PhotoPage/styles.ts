@@ -1,14 +1,14 @@
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 
-type PhotoBoxProps = {
-  active: any;
+type WrapperProps = {
+  name: string;
 };
 
 type TextProps = {
   name: string;
 };
 
-type ImgProps = {
+type AlbumCardProps = {
   isLeft: boolean;
 };
 
@@ -19,29 +19,27 @@ const Container = styled.div`
   overflow: auto;
 `;
 
-const PhotoBox = styled.div<PhotoBoxProps>`
+const PhotoBox = styled.div`
   position: absolute;
-  opacity: 0.67;
   width: 600px;
   height: 600px;
   margin: 0 auto;
   background-image: url("/images/colorPhotoTree.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   object-fit: contain;
-  border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%;
-  box-shadow: rgba(184, 156, 55, 0.65) 0px 40px 57px,
-    rgba(184, 156, 55, 0.32) 0px -12px 37px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(184, 156, 55, 0.37) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  /* border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%; */
+  border: 1px solid #f7d763;
+  border-radius: 50%;
+  box-shadow: rgba(222, 172, 104, 0.65) 0px 45px 50px,
+    rgba(222, 172, 104, 0.22) 0px -45px 50px 20px,
+    rgba(0, 0, 0, 0.12) -30px 35px 0px,
+    rgba(222, 172, 104, 0.22) 0px 52px 43px 20px,
+    rgba(0, 0, 0, 0.09) 40px -4px 5px;
   overflow: hidden;
-  ${(props) => {
-    if (props.active) {
-      return css`
-        animation: ${PhotoBoxEffect} 6.75s infinite;
-      `;
-    }
-  }}
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<WrapperProps>`
   position: relative;
   scroll-snap-align: center;
   display: flex;
@@ -49,9 +47,11 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #8f948f;
-  box-shadow: rgba(113, 117, 113, 0.8) 45px 30px 100px 45px inset,
-    rgba(113, 117, 113, 0.82) 0px 18px 36px -18px inset;
+  /* background: linear-gradient(#696661, #807d78, #958a79); */
+  background: ${(props) => {
+  if (props.name === "mainPage") return "linear-gradient(#696661, #807d78, #999688)";
+  if (props.name === "subPage") return "linear-gradient(to top, #696661, #807d78, #999688)";
+  }};
 `;
 
 const Text = styled.h1<TextProps>`
@@ -71,9 +71,9 @@ const Text = styled.h1<TextProps>`
   }};
   font-family: "Cafe24Oneprettynight";
   font-weight: 300;
-  color: #003638;
+  color: #dbd9d0;
   writing-mode: vertical-lr;
-  text-shadow: 3px 3px 7px #f4a69f;
+  text-shadow: 3px 3px 7px #474642;
   cursor: default;
 `;
 
@@ -92,45 +92,33 @@ const ScrollBtn = styled.button`
   cursor: pointer;
 `;
 
-const Img = styled.img<ImgProps>`
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  z-index: 99;
-  bottom: 0;
-  ${(props) => (props.isLeft ? "left: 3%" : "right: 3%")};
-  transform: ${(props) => {
-    if (props.isLeft === false) return "scaleX(-1)";
-    else return "none";
-  }};
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const AlbumCard = styled.div<AlbumCardProps>`
+  background-color: #ffffff;
+  width: 600px;
+  height: 600px;
+  border-radius: 31% 1% 2% 13% / 5% 2% 3% 3%;
+  transform: ${(props) => (props.isLeft ? "scaleX(-1)" : "none")};
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+  border-left: 0.9mm groove rgba(6, 74, 56, 0.1);
 `;
 
-const AlbumCard = styled.div`
-  background-color: #f0f0f0;
-  width: 300px;
-  height: 500px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 35px -10px,
-    rgba(0, 0, 0, 0.7) 0px 18px 30px -8px;
-`;
+// const PhotoBoxEffect = keyframes`
+//    0% {
+//       border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%;
 
-const PhotoBoxEffect = keyframes`
-   0% {
-      border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%;
-      
-    }
-    25% {
-      border-radius: 67% 33% 50% 50% / 45% 32% 68% 55%;
-    }
-    50% {
-      border-radius: 28% 72% 67% 33% / 40% 56% 44% 60%;
-      
-    }
-    75% {
-      border-radius: 67% 33% 65% 35% / 35% 60% 40% 65%;
-    }
-`;
+//     }
+//     25% {
+//       border-radius: 67% 33% 50% 50% / 45% 32% 68% 55%;
+//     }
+//     50% {
+//       border-radius: 28% 72% 67% 33% / 40% 56% 44% 60%;
 
-export { Container, PhotoBox, Text, Wrapper, ScrollBtn, Img, AlbumCard };
+//     }
+//     75% {
+//       border-radius: 67% 33% 65% 35% / 35% 60% 40% 65%;
+//     }
+// `;
+
+export { Container, PhotoBox, Text, Wrapper, ScrollBtn, AlbumCard };
