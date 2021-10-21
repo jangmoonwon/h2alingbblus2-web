@@ -31,10 +31,10 @@ const PhotoBox = styled.div`
   /* border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%; */
   border: 1px solid #f7d763;
   border-radius: 50%;
-  box-shadow: rgba(222, 172, 104, 0.65) 0px 45px 50px,
+  box-shadow: rgba(214, 162, 88, 0.65) 0px 45px 50px,
     rgba(222, 172, 104, 0.22) 0px -45px 50px 20px,
     rgba(0, 0, 0, 0.12) -30px 35px 0px,
-    rgba(222, 172, 104, 0.22) 0px 52px 43px 20px,
+    rgba(214, 162, 88, 0.22) 0px 52px 43px 20px,
     rgba(0, 0, 0, 0.09) 40px -4px 5px;
   overflow: hidden;
 `;
@@ -47,10 +47,11 @@ const Wrapper = styled.div<WrapperProps>`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* background: linear-gradient(#696661, #807d78, #958a79); */
   background: ${(props) => {
-  if (props.name === "mainPage") return "linear-gradient(#696661, #807d78, #999688)";
-  if (props.name === "subPage") return "linear-gradient(to top, #696661, #807d78, #999688)";
+    if (props.name === "mainPage")
+      return "linear-gradient(#696661, #807d78, #999688)";
+    if (props.name === "subPage")
+      return "linear-gradient(to top, #696661, #807d78, #999688)";
   }};
 `;
 
@@ -70,8 +71,8 @@ const Text = styled.h1<TextProps>`
     if (props.name === "desc2") return "100px";
   }};
   font-family: "Cafe24Oneprettynight";
-  font-weight: 300;
-  color: #dbd9d0;
+  font-weight: 100;
+  color: #d6a258;
   writing-mode: vertical-lr;
   text-shadow: 3px 3px 7px #474642;
   cursor: default;
@@ -94,7 +95,7 @@ const ScrollBtn = styled.button`
 
 const AlbumCard = styled.div<AlbumCardProps>`
   background-color: #ffffff;
-  width: 600px;
+  width: 550px;
   height: 600px;
   border-radius: 31% 1% 2% 13% / 5% 2% 3% 3%;
   transform: ${(props) => (props.isLeft ? "scaleX(-1)" : "none")};
@@ -104,21 +105,30 @@ const AlbumCard = styled.div<AlbumCardProps>`
   border-left: 0.9mm groove rgba(6, 74, 56, 0.1);
 `;
 
-// const PhotoBoxEffect = keyframes`
-//    0% {
-//       border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%;
+const RightStyledBook = styled.div`
+  background-color: #ffffff;
+  width: 550px;
+  height: 609px;
+  position: relative;
+  top: 1px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+`;
 
-//     }
-//     25% {
-//       border-radius: 67% 33% 50% 50% / 45% 32% 68% 55%;
-//     }
-//     50% {
-//       border-radius: 28% 72% 67% 33% / 40% 56% 44% 60%;
+const LeftStyledBook = styled.div`
+  background-color: #ffffff;
+  width: 530px;
+  height: 630px;
+  border-radius: 0% 38% 11% 0% / 10% 2% 2% 10% ;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+`;
 
-//     }
-//     75% {
-//       border-radius: 67% 33% 65% 35% / 35% 60% 40% 65%;
-//     }
-// `;
-
-export { Container, PhotoBox, Text, Wrapper, ScrollBtn, AlbumCard };
+export {
+  Container,
+  PhotoBox,
+  Text,
+  Wrapper,
+  ScrollBtn,
+  AlbumCard,
+  RightStyledBook,
+  LeftStyledBook,
+};
