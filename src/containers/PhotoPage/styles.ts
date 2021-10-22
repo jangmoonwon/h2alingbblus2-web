@@ -8,10 +8,6 @@ type TextProps = {
   name: string;
 };
 
-type AlbumCardProps = {
-  isLeft: boolean;
-};
-
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -28,7 +24,6 @@ const PhotoBox = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: contain;
-  /* border-radius: 62% 38% 70% 30% / 33% 61% 39% 67%; */
   border: 1px solid #f7d763;
   border-radius: 50%;
   box-shadow: rgba(214, 162, 88, 0.65) 0px 45px 50px,
@@ -72,9 +67,9 @@ const Text = styled.h1<TextProps>`
   }};
   font-family: "Cafe24Oneprettynight";
   font-weight: 100;
-  color: #d6a258;
+  color: #f0b056;
   writing-mode: vertical-lr;
-  text-shadow: 3px 3px 7px #474642;
+  text-shadow: 5px 5px 7px #474642;
   cursor: default;
 `;
 
@@ -93,33 +88,43 @@ const ScrollBtn = styled.button`
   cursor: pointer;
 `;
 
-const AlbumCard = styled.div<AlbumCardProps>`
-  background-color: #ffffff;
-  width: 550px;
-  height: 600px;
-  border-radius: 31% 1% 2% 13% / 5% 2% 3% 3%;
-  transform: ${(props) => (props.isLeft ? "scaleX(-1)" : "none")};
-  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
-  border-left: 0.9mm groove rgba(6, 74, 56, 0.1);
-`;
-
 const RightStyledBook = styled.div`
-  background-color: #ffffff;
-  width: 550px;
-  height: 609px;
+  background-color: #eae6dd;
+  width: 535px;
+  height: 605px;
   position: relative;
-  top: 1px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  top: 0;
+  box-shadow: rgb(0, 0, 0, 0.7) 0px 20px 30px -10px;
 `;
 
 const LeftStyledBook = styled.div`
-  background-color: #ffffff;
+  position: relative;
+  z-index: 3;
+  background-color: #eae6dd;
   width: 530px;
   height: 630px;
-  border-radius: 0% 38% 11% 0% / 10% 2% 2% 10% ;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 50% 50% 45% 55% / 1% 2% 2% 1%;
+  box-shadow: rgb(0, 0, 0, 0.55) 5px 30px 40px -1px;
+`;
+
+const RightStyledBook2 = styled.div`
+  position: relative;
+  top: 1px;
+  z-index: 2;
+  background-color: #eae6dd;
+  width: 530px;
+  height: 630px;
+  border-radius: 50% 50% 45% 55% / 1% 2% 2% 1%;
+  box-shadow: rgb(0, 0, 0, 0.7) 0px 20px 30px -10px;
+`;
+
+const LeftStyledBook2 = styled.div`
+  background-color: #cec5b4;
+  width: 530px;
+  height: 630px;
+  border-radius: 50% 50% 45% 55% / 1% 2% 2% 1%;
+  box-shadow: rgb(0, 0, 0, 0.75) 0px 20px 30px -10px;
+  transform: scaleX(-1);
 `;
 
 export {
@@ -128,7 +133,8 @@ export {
   Text,
   Wrapper,
   ScrollBtn,
-  AlbumCard,
   RightStyledBook,
   LeftStyledBook,
+  RightStyledBook2,
+  LeftStyledBook2,
 };
