@@ -88,26 +88,12 @@ const ScrollBtn = styled.button`
   cursor: pointer;
 `;
 
-const RightStyledBook = styled.div`
-  background-color: #eae6dd;
-  width: 535px;
-  height: 605px;
-  position: relative;
-  top: 0;
-  box-shadow: rgb(0, 0, 0, 0.7) 0px 20px 30px -10px;
-`;
-
 const LeftStyledBook = styled.div`
-  position: relative;
-  z-index: 3;
-  background-color: #eae6dd;
-  width: 530px;
-  height: 630px;
-  border-radius: 50% 50% 45% 55% / 1% 2% 2% 1%;
-  box-shadow: rgb(0, 0, 0, 0.55) 5px 30px 40px -1px;
-`;
-
-const RightStyledBook2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   position: relative;
   top: 1px;
   z-index: 2;
@@ -118,13 +104,36 @@ const RightStyledBook2 = styled.div`
   box-shadow: rgb(0, 0, 0, 0.7) 0px 20px 30px -10px;
 `;
 
-const LeftStyledBook2 = styled.div`
-  background-color: #cec5b4;
+const RightStyledBook = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbeee6;
   width: 530px;
   height: 630px;
-  border-radius: 50% 50% 45% 55% / 1% 2% 2% 1%;
+  border-radius: 55% 45% 50% 50% / 2% 1% 1% 2%;
   box-shadow: rgb(0, 0, 0, 0.75) 0px 20px 30px -10px;
-  transform: scaleX(-1);
+`;
+
+const AlbumText = styled.text<TextProps>`
+  color: #003638;
+  text-align: center;
+  font-family: "Cafe24Oneprettynight";
+  font-size: ${(props) => {
+    if (props.name === "title") return "45px";
+    if (props.name === "date") return "25px";
+  }};
+  font-weight: ${(props) => {
+    if (props.name === "title") return "900";
+    if (props.name === "date") return "100";
+  }};
+  cursor: default;
+`;
+
+const AlbumPhoto = styled.img`
+  width: 400px;
+  height: 320px;
 `;
 
 export {
@@ -135,6 +144,6 @@ export {
   ScrollBtn,
   RightStyledBook,
   LeftStyledBook,
-  RightStyledBook2,
-  LeftStyledBook2,
+  AlbumText,
+  AlbumPhoto,
 };

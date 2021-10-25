@@ -8,8 +8,8 @@ import {
   ScrollBtn,
   RightStyledBook,
   LeftStyledBook,
-  RightStyledBook2,
-  LeftStyledBook2,
+  AlbumText,
+  AlbumPhoto,
 } from "./styles";
 
 function PhotoPage() {
@@ -32,18 +32,12 @@ function PhotoPage() {
           flexDirection: "row",
         }}
       >
-        <RightStyledBook2 />
-        <LeftStyledBook2 />
-      </Wrapper>
-      <Wrapper
-        name="mainPage"
-        style={{
-          flexDirection: "row",
-        }}
-      >
-        <LeftStyledBook />
+        <LeftStyledBook>
+          <AlbumText name="title">청년부 수련회</AlbumText>
+          <AlbumText name="date">8월 7일</AlbumText>
+        </LeftStyledBook>
         <RightStyledBook>
-         
+          <AlbumPhoto src="/images/albumCover.jpg" alt="albumCover" />
         </RightStyledBook>
       </Wrapper>
     </Container>
