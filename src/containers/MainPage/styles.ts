@@ -58,6 +58,7 @@ const Text = styled.text<TextProps>`
 `;
 
 
+
 const DownArrow = styled.img<ArrowProps>`
   position: absolute;
   bottom: 5px;

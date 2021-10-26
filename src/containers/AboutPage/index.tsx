@@ -47,7 +47,7 @@ function AboutPage() {
         <YellowBox />
         <BgBox />
         <DownArrow
-          src="/images/GreenDownArrow.png"
+          src="/images/png/GreenDownArrow.png"
           alt="GreenDownArrow"
           onClick={SecondPageRef}
           active
@@ -56,7 +56,7 @@ function AboutPage() {
       <Wrapper ref={BottomToSecondRef}>
         <h2>간단한 예배 소개 글</h2>
         <DownArrow
-          src="/images/GreenDownArrow.png"
+          src="/images/png/GreenDownArrow.png"
           alt="GreenDownArrow"
           onClick={ThirdPageRef}
           active

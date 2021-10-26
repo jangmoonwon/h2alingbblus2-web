@@ -43,20 +43,20 @@ const SideBar = (props: SideBarProps) => {
         </Wrapper>
         <Wrapper desc="snsLink">
           <SnsLink href={"https://www.instagram.com/h2aling_bblus2/"}>
-            <SnsLinkLogo src="/images/instagram.png" alt="instagram" />
+            <SnsLinkLogo src="/images/png/instagram.png" alt="instagram" />
           </SnsLink>
           <SnsLink
             href={"https://www.facebook.com/GanghwajungAngGyohoeCheongnyeonbu/"}
           >
-            <SnsLinkLogo src="/images/facebook.png" alt="facebook" />
+            <SnsLinkLogo src="/images/png/facebook.png" alt="facebook" />
           </SnsLink>
           <SnsLink
             href={"https://www.youtube.com/channel/UCz3IrmZSylgR8i5uOQi4eaw"}
           >
-            <SnsLinkLogo src="/images/youtube.png" alt="youtube" />
+            <SnsLinkLogo src="/images/png/youtube.png" alt="youtube" />
           </SnsLink>
           <SnsLink href={"http://www.gcmch.org/kjmch/index_tong.asp"}>
-            <SnsLinkLogo src="/images/church.png" alt="church" />
+            <SnsLinkLogo src="/images/png/church.png" alt="church" />
           </SnsLink>
         </Wrapper>
       </SideBarLayout>

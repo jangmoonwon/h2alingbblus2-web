@@ -24,7 +24,7 @@ function Header() {
       <Content>
         {sideBarOpen && <SideBar active close />}
         <SideBarBtn onClick={ClickSideBar} isOpen={sideBarOpen}>
-          <SideBarLogo src="/images/plus.png" alt="sideBarMenu" />
+          <SideBarLogo src="/images/png/plus.png" alt="sideBarMenu" />
         </SideBarBtn>
       </Content>
     </Container>

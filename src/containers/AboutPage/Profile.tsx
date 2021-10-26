@@ -134,10 +134,10 @@ function SlidePage() {
         </Content>
       </SlideContainer>
       <Arrow isLeft={true} onClick={prevClick}>
-        <Img src="/images/leftArrow.png" alt="prevClick" />
+        <Img src="/images/png/leftArrow.png" alt="prevClick" />
       </Arrow>
       <Arrow isLeft={false} onClick={nextClick}>
-        <Img src="/images/rightArrow.png" alt="nextClick" />
+        <Img src="/images/png/rightArrow.png" alt="nextClick" />
       </Arrow>
     </Container>
   );

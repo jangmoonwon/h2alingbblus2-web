@@ -26,7 +26,7 @@ function MainPage() {
         <Text title="main">힐링플러스 미니스트리</Text>
 
         <DownArrow
-          src="/images/downArrow.png"
+          src="/images/png/downArrow.png"
           alt="downArrow"
           onClick={SecondPageRef}
           active
@@ -35,7 +35,7 @@ function MainPage() {
       <Wrapper ref={BottomToSecondRef}>
         <SecondPage />
         <DownArrow
-          src="/images/GreenDownArrow.png"
+          src="/images/png/GreenDownArrow.png"
           alt="downArrow"
           onClick={ThirdPageRef}
           active

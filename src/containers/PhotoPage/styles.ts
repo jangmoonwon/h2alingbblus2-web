@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 type WrapperProps = {
   name: string;
@@ -136,6 +137,11 @@ const AlbumPhoto = styled.img`
   height: 320px;
 `;
 
+const AlbumLink = styled(NavLink)`
+  width: 400px;
+  height: 320px;
+`;
+
 export {
   Container,
   PhotoBox,
@@ -146,4 +152,5 @@ export {
   LeftStyledBook,
   AlbumText,
   AlbumPhoto,
+  AlbumLink,
 };

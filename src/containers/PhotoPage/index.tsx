@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import paths from "../../routes/paths.json";
+
 // import svg from "/images/test.svg";
 import {
   Container,
@@ -10,7 +12,9 @@ import {
   LeftStyledBook,
   AlbumText,
   AlbumPhoto,
+  AlbumLink,
 } from "./styles";
+
 
 function PhotoPage() {
   const buttonRef = useRef<any>();
@@ -37,7 +41,9 @@ function PhotoPage() {
           <AlbumText name="date">8월 7일</AlbumText>
         </LeftStyledBook>
         <RightStyledBook>
-          <AlbumPhoto src="/images/albumCover.jpg" alt="albumCover" />
+          <AlbumLink to={paths.album1}>
+            <AlbumPhoto src="/images/albumCover.jpg" alt="albumCover" />
+          </AlbumLink>
         </RightStyledBook>
       </Wrapper>
     </Container>
