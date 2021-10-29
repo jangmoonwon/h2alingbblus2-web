@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Album1 = () => {
+type ButtonProps = {
+  history: any;
+};
+
+const Album1 = ({ history }: ButtonProps) => {
   return (
     <Container>
       <HeaderTitle>청년부 수련회</HeaderTitle>
@@ -21,9 +25,10 @@ const Album1 = () => {
           <Images src="/images/album1/album1(10).jpg" />
           <Images src="/images/album1/album1(11).jpg" />
           <Images src="/images/album1/album1(12).jpg" />
-
         </Wrapper>
-        <Prevbutton>BACK</Prevbutton>
+        <Prevbutton onClick={() => history.goBack()}>
+          <ButtonImg src="/images/png/leftArrow.png" />
+        </Prevbutton>
       </ImageContainer>
     </Container>
   );
@@ -66,7 +71,6 @@ const HeaderTitle = styled.div`
   font-size: 55px;
   font-family: "Cafe24Oneprettynight";
   font-weight: 900;
-
 `;
 
 const Images = styled.img`
@@ -76,13 +80,28 @@ const Images = styled.img`
 `;
 
 const Prevbutton = styled.button`
-position: absolute;
-bottom: 1%;
-width: 64px;
-height: 64px;
-border: transparent;
-border-radius: 50%;
-background-color: rgba(255,255,255, 0.75);
-font-size: 20px;
-cursor: pointer;
+  position: absolute;
+  left: 33px;
+  bottom: 33px;
+  width: 70px;
+  height: 70px;
+  border: transparent;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: rosybrown;
+    transition: 0.12s all ease-in;
+  }
+`;
+
+const ButtonImg = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
 `;
