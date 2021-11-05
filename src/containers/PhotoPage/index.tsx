@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import paths from "../../routes/paths.json";
-
-// import svg from "/images/test.svg";
+import AlbumLayout from "./AlbumList";
 import {
   Container,
   PhotoBox,
@@ -17,6 +16,8 @@ import {
 
 
 function PhotoPage() {
+  
+
   const buttonRef = useRef<any>();
   const scrollToBottom = () => {
     buttonRef.current.scrollIntoView({ behavior: "smooth" });
@@ -45,6 +46,9 @@ function PhotoPage() {
             <AlbumPhoto src="/images/albumCover.jpg" alt="albumCover" />
           </AlbumLink>
         </RightStyledBook>
+      </Wrapper>
+      <Wrapper name="subPage">
+        <AlbumLayout />
       </Wrapper>
     </Container>
   );
