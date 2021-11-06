@@ -7,6 +7,7 @@ import AboutPage from "../containers/AboutPage";
 import WorshipPage from "../containers/WorshipPage";
 import PhotoPage from "../containers/PhotoPage";
 import Album1 from "../containers/PhotoPage/Album1";
+import Album2 from "../containers/PhotoPage/Album2";
 
 // import { Header, RouterContainer } from "../components";
 import Header from "../components/Header";
@@ -26,6 +27,7 @@ export default function MainRoutes() {
         <Route path={pathInfo.worship} component={WorshipPage} />
         <Route path={pathInfo.photo} component={PhotoPage} />
         <Route path={pathInfo.album1} component={Album1} />
+        <Route path={pathInfo.album2} component={Album2} />
       </Switch>
     </RouterContainer>
   );

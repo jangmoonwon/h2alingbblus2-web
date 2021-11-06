@@ -18,7 +18,9 @@ function AlbumList() {
         <AlbumText>청년부 수련회</AlbumText>
       </PhotoCardContainer>
       <PhotoCardContainer order={2}>
-        <AlbumImage />
+      <AlbumLink to={paths.album2}>
+        <AlbumImage src="/images/album2/album(2)12.jpg" alt="albumCover" />
+        </AlbumLink>
         <AlbumText>가을맞이 운동회</AlbumText>
       </PhotoCardContainer>
       <PhotoCardContainer order={3}>
