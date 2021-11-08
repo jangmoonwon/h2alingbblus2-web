@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import paths from "../../routes/paths.json";
 import AlbumLayout from "./AlbumList";
 import {
   Container,
@@ -7,11 +6,6 @@ import {
   Text,
   Wrapper,
   ScrollBtn,
-  RightStyledBook,
-  LeftStyledBook,
-  AlbumText,
-  AlbumPhoto,
-  AlbumLink,
 } from "./styles";
 
 
@@ -30,24 +24,8 @@ function PhotoPage() {
         <Text name="desc2">사진첩</Text>
         <ScrollBtn onClick={scrollToBottom}>밑으로 가기</ScrollBtn>
       </Wrapper>
-      <Wrapper
-        name="subPage"
-        ref={buttonRef}
-        style={{
-          flexDirection: "row",
-        }}
-      >
-        <LeftStyledBook>
-          <AlbumText name="title">청년부 수련회</AlbumText>
-          <AlbumText name="date">8월 7일</AlbumText>
-        </LeftStyledBook>
-        <RightStyledBook>
-          <AlbumLink to={paths.album1}>
-            <AlbumPhoto src="/images/albumCover.jpg" alt="albumCover" />
-          </AlbumLink>
-        </RightStyledBook>
-      </Wrapper>
-      <Wrapper name="subPage">
+      
+      <Wrapper name="subPage" ref={buttonRef}>
         <AlbumLayout />
       </Wrapper>
     </Container>

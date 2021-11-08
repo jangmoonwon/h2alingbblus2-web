@@ -10,6 +10,7 @@ type PhotoCardProps = {
 function AlbumList() {
   return (
     <Container>
+      <StickerImg src="/images/png/sticker.png" />
       <InfoMemo>사진을 눌러주세요 :)</InfoMemo>
       <PhotoCardContainer order={1}>
         <AlbumLink to={paths.album1}>
@@ -18,13 +19,15 @@ function AlbumList() {
         <AlbumText>청년부 수련회</AlbumText>
       </PhotoCardContainer>
       <PhotoCardContainer order={2}>
-      <AlbumLink to={paths.album2}>
-        <AlbumImage src="/images/album2/album(2)12.jpg" alt="albumCover" />
+        <AlbumLink to={paths.album2}>
+          <AlbumImage src="/images/album2/album(2)12.jpg" alt="albumCover" />
         </AlbumLink>
         <AlbumText>가을맞이 운동회</AlbumText>
       </PhotoCardContainer>
       <PhotoCardContainer order={3}>
-        <AlbumImage />
+      <AlbumLink to={paths.album3}>
+          <AlbumImage src="/images/album3/album3Cover.png" alt="albumCover" />
+        </AlbumLink>
         <AlbumText>동아리 활동</AlbumText>
       </PhotoCardContainer>
     </Container>
@@ -79,8 +82,10 @@ const AlbumLink = styled(NavLink)`
 `;
 
 const AlbumText = styled.div`
+font-family: "Cafe24Oneprettynight";
+  font-weight: 100;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 25px;
 `;
 
 const InfoMemo = styled.div`
@@ -96,6 +101,16 @@ const InfoMemo = styled.div`
   font-size: 27px;
   background-color: #edcda5;
   box-shadow: rgb(64, 62, 58) 0px 20px 30px -10px;
-  border-radius: 0% 10% 15% 0% / 10% 1% 3% 10% ;
+  border-radius: 0% 10% 15% 0% / 10% 1% 3% 10%;
   transform: rotate(-5deg);
+`;
+
+const StickerImg = styled.img`
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 40%;
+  width: 64px;
+  height: 64px;
+  transform: rotate(-40deg);
 `;
