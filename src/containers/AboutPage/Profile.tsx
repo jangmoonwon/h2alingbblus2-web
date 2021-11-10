@@ -150,7 +150,6 @@ const Container = styled.div`
   height: 70vh;
   background-color: rgba(235, 235, 235, 1);
   border-radius: 25px;
-  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 10px 60px -30px;
   overflow: auto;

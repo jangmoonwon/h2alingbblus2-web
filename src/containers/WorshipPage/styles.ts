@@ -65,8 +65,10 @@ const Hr = styled.hr`
 `;
 
 const ErrorText = styled.text`
+  display: flex;
+  justify-content: center;
+  margin-top: 180px;
   font-size: 50px;
-  text-align: center;
   color: #adacac;
 `;
 

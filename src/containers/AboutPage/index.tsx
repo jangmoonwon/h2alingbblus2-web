@@ -24,11 +24,6 @@ function AboutPage() {
     BottomToSecondRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const BottomToThirdRef = useRef<any>();
-  const ThirdPageRef = () => {
-    BottomToThirdRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <Container>
       <Wrapper ref={TopRef}>
@@ -53,16 +48,7 @@ function AboutPage() {
           active
         />
       </Wrapper>
-      <Wrapper ref={BottomToSecondRef}>
-        <h2>간단한 예배 소개 글</h2>
-        <DownArrow
-          src="/images/png/GreenDownArrow.png"
-          alt="GreenDownArrow"
-          onClick={ThirdPageRef}
-          active
-        />
-      </Wrapper>
-      <Wrapper style={{ backgroundColor: "#d9d9d9" }} ref={BottomToThirdRef}>
+      <Wrapper style={{ backgroundColor: "#d9d9d9" }} ref={BottomToSecondRef}>
         <SlidePage />
         <ScrollBtn onClick={scrollToTop}>맨 위로 가기</ScrollBtn>
       </Wrapper>
