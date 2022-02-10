@@ -11,6 +11,8 @@ import {
   BgBox,
   ScrollBtn,
   DownArrow,
+  SvgBackground,
+  MainPageText,
 } from "./styles";
 
 function AboutPage() {
@@ -51,6 +53,14 @@ function AboutPage() {
       <Wrapper style={{ backgroundColor: "#d9d9d9" }} ref={BottomToSecondRef}>
         <SlidePage />
         <ScrollBtn onClick={scrollToTop}>맨 위로 가기</ScrollBtn>
+      </Wrapper>
+      <Wrapper
+       
+      >
+        <SvgBackground>
+          <MainPageText size="big">사과유자청</MainPageText>
+          <MainPageText size="small">사랑스럽고 과즙미 넘치는, 유쾌하고 자유로운 청년부!</MainPageText>
+        </SvgBackground>
       </Wrapper>
     </Container>
   );

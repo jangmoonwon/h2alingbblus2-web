@@ -1,7 +1,11 @@
-import styled, {css, keyframes} from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 type ArrowProps = {
   active: any;
+};
+
+type MainTextProps = {
+  size: string;
 };
 
 const Container = styled.div`
@@ -138,12 +142,34 @@ const DownArrow = styled.img<ArrowProps>`
   height: 64px;
   cursor: pointer;
   ${(props) => {
-  if (props.active) {
-    return css`
-      animation: ${ArrowEffect} 1.45s infinite;
-    `;
-  }
+    if (props.active) {
+      return css`
+        animation: ${ArrowEffect} 1.45s infinite;
+      `;
+    }
   }}
+`;
+
+const SvgBackground = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/images/svg/aboutMainBg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+const MainPageText = styled.text<MainTextProps>`
+  font-size: ${(props) => {
+  if (props.size === 'big') return "150px";
+  if (props.size === 'small') return "50px";
+  }};
+  color: #f0f0f0;
+  font-family: 'KOTRAHOPE';
+  font-weight: 300;
 `;
 
 const ArrowEffect = keyframes`
@@ -170,4 +196,6 @@ export {
   BgBox,
   ScrollBtn,
   DownArrow,
+  SvgBackground,
+  MainPageText,
 };
